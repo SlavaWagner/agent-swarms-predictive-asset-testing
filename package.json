@@ -1,0 +1,36 @@
+{
+  "name": "agent-swarms-predictive-asset-testing",
+  "version": "1.0.0",
+  "description": "Standalone AI Agent Swarms for Predictive Asset Testing & Pre-production (Google Ads / PMax)",
+  "main": "bin/index.js",
+  "type": "module",
+  "bin": {
+    "agent-swarms-predictive-asset-testing": "./bin/index.js",
+    "predictive-asset-testing": "./bin/index.js"
+  },
+  "scripts": {
+    "start": "node bin/index.js",
+    "test": "node src/verify.js",
+    "dashboard": "node bin/index.js dashboard"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@inquirer/prompts": "^7.1.0",
+    "axios": "^1.7.9",
+    "chalk": "^5.4.1",
+    "cheerio": "^1.0.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.5"
+  },
+  "keywords": [
+    "antigravity-cli",
+    "ai-agents",
+    "predictive-asset-testing",
+    "agent-swarms",
+    "google-ads",
+    "pmax",
+    "decision-matrix"
+  ],
+  "author": "Slava Wagner",
+  "license": "MIT"
+}
