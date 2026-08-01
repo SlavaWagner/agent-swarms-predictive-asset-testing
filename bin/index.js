@@ -88,7 +88,7 @@ program
         defaultUrl
       });
 
-      console.log(chalk.bold.green('\n✔ Setup completed successfully! Configurations saved to config.json.\n'));
+      console.log(chalk.bold.green('\n[OK] Setup completed successfully! Configurations saved to config.json.\n'));
     } catch (err) {
       console.error(chalk.red('✖ Setup failed:'), err.message);
     }
@@ -152,7 +152,7 @@ program
         const swarm = report.swarmPredictiveReport;
         const winner = swarm.evaluatedCandidates[0];
         if (winner) {
-          console.log(chalk.bold.green(`🏆 WINNER AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
+          console.log(chalk.bold.green(`[WINNER] AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
           console.log(`   Matrix Grade & Score: Grade ${winner.matrixGrade} (${winner.matrixScore}/10)`);
           console.log(`   Swarm Approval Rate:  ${winner.swarmSummary.approvalRatePercent}% (${winner.swarmSummary.approvedAgentsCount}/20 Agents Approved)`);
           console.log(chalk.cyan(`   Proportionale Metriken-Prognose (Hochrechnung):`));
@@ -181,10 +181,10 @@ program
       }
 
       fs.writeFileSync(reportPath, JSON.stringify(report, null, 2), 'utf8');
-      console.log(chalk.bold.green(`\n✔ Report & Asset Catalog saved persistently to:\n  ${reportPath}\n`));
+      console.log(chalk.bold.green(`\n[OK] Report & Asset Catalog saved persistently to:\n  ${reportPath}\n`));
 
     } catch (error) {
-      console.error(chalk.bold.red('\n✖ Execution failed:'), error.message);
+      console.error(chalk.bold.red('\n[ERROR] Execution failed:'), error.message);
     }
   });
 
@@ -205,9 +205,9 @@ program
         count: 20,
         runSwarmTest: true
       });
-      console.log(chalk.bold.green('\n✔ Swarm Testing completed successfully!\n'));
+      console.log(chalk.bold.green('\n[OK] Swarm Testing completed successfully!\n'));
     } catch (error) {
-      console.error(chalk.bold.red('\n✖ Swarm Test failed:'), error.message);
+      console.error(chalk.bold.red('\n[ERROR] Swarm Test failed:'), error.message);
     }
   });
 
@@ -249,7 +249,7 @@ program
     });
 
     server.listen(port, () => {
-      console.log(chalk.bold.green(`\n✔ Dashboard server started on http://localhost:${port}`));
+      console.log(chalk.bold.green(`\n[OK] Dashboard server started on http://localhost:${port}`));
       console.log(chalk.gray('Press Ctrl+C to stop.\n'));
       const openCmd = process.platform === 'win32' ? 'start' : process.platform === 'darwin' ? 'open' : 'xdg-open';
       exec(`${openCmd} http://localhost:${port}`, () => {});

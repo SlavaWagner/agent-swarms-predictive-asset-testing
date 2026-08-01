@@ -9,7 +9,7 @@
 
 ---
 
-## 🌟 Overview & Purpose
+## Overview & Purpose
 
 In traditional SEA and Performance Marketing, finding high-converting winning ad creatives requires launching dozens of unverified variants live on Google Ads and burning thousands of Euros in media spend to gather statistical significance.
 
@@ -24,7 +24,7 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
 
 ---
 
-## 🏗️ Architecture & Core Components
+## Architecture & Core Components
 
 ```
  [Campaign Theme / Baseline Copy]
@@ -101,7 +101,7 @@ Deploys 20 test customer agents with distinct demographic & psychographic profil
 
 ---
 
-## 🚀 Installation & Getting Started
+## Installation & Getting Started
 
 ### 1. Install Globally via Antigravity CLI Ecosystem
 ```bash
@@ -122,7 +122,7 @@ npm test
 
 ---
 
-## 💻 CLI Usage & Commands
+## CLI Usage & Commands
 
 ### 1. Mass Pre-production & 20-Agent Swarm Testing
 Generate 400 AI ad alternatives, matrix score them, and run predictive testing with the 20-Agent Swarm:
@@ -158,7 +158,7 @@ Open your browser at `http://localhost:8080`.
 
 ---
 
-## 📊 Example Output
+## Example Output
 
 ```text
 === Mass AI Ad Pre-production & 20-Agent Swarm Testing ===
@@ -169,7 +169,7 @@ Target Quantity:        400 AI Ad Alternatives
 Landing Page URL:       https://www.slavawagner.de
 20-Agent Swarm Testing: ENABLED
 
-✔ Generated & Vectorized 400 AI Ad Alternatives!
+[OK] Generated & Vectorized 400 AI Ad Alternatives!
 
 === AI ASSET DECISION MATRIX SCORING SUMMARY ===
 Grade A (PMF-Kandidaten / Skalieren):   231
@@ -178,7 +178,7 @@ Grade C (Grenzwertig / Low-Budget):     0
 Grade D (Noise / Kill):                0
 
 === 20-AGENT PERSONA SWARM STATEMENT & PREDICTIVE METRICS ===
-🏆 WINNER AD ALTERNATIVE TO LAUNCH: PREPROD-RSA-0016
+[WINNER] AD ALTERNATIVE TO LAUNCH: PREPROD-RSA-0016
    Matrix Grade & Score: Grade A (8.02/10)
    Swarm Approval Rate:  100% (20/20 Agents Approved)
    Proportionale Metriken-Prognose (Hochrechnung):
@@ -195,13 +195,13 @@ Grade D (Noise / Kill):                0
   "Der Story-Spin 'Transformative Aufwertung' holt mich genau an meinem Schmerzpunkt ab. Diese Ansprache hebt sich deutlich von der Konkurrenz ab!"
   [CTR: 8.38% | CPC: €2.94 | CPM: €33.45 | CPL: €65.65]
 
-✔ Report & Asset Catalog saved persistently to:
+[OK] Report & Asset Catalog saved persistently to:
   storage/runs/preproduction-report-rsa-2026-08-01.json
 ```
 
 ---
 
-## 📜 License
+## License
 
 Distributed under the MIT License. See [`LICENSE`](LICENSE) for details.
 
