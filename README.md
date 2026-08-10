@@ -51,8 +51,9 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
 ```
 
 ### 1. Mass Pre-production Engine (`PreproductionAgent`)
-- **Asset Spine**: Ensures all headline and description assets follow a cohesive story spin and campaign theme.
-- **Unconventional Angles & Metaphors**: Utilizes high-converting positioning frames (*Asset Fortress*, *Asymmetrical Leverage*, *Yield Telescope*, *Paradoxical Anchor*, *Silent Accelerator*) while avoiding tired clichés (e.g. "save time", "reduce stress").
+- **Phase 0 Angle Discovery Engine**: Prior to asset creation, the agent executes an offer-tailored Angle Search to discover **40 unique, distinct positioning angles** (story spines, buyer motivators, and situational triggers) tailored like a glove to the specific offer, industry, and landing page context.
+- **High Distinction & Non-Repeating Themes**: Every single one of the 40 top evaluated candidate asset groups is built on a completely distinct angle (e.g., *Erbschafts-Wertgutachten*, *Zinswende-Rechner 2026*, *Scheidung & Konfliktfreie Bewertung*, *Sanierungsbedarf vs. GEG 2026*, *Off-Market VIP-Verkauf*, *Berliner Kiez-Analyse*, *Bodenrichtwert*, etc.) ensuring zero repeating themes across the pre-production catalog.
+- **Offer-Specific Perspectives (No Framework or Tech Labels in Copy)**: Copywriting frameworks (`PAS`, `AIDA`, `FAB`, `MVP Pivot`, `Big Five`, `DISG`) serve strictly as internal psychological writing perspectives applied to the offer. No framework labels or AI/tech buzzwords (*"KI-Infrastruktur"*, *"technologischer Vorsprung"*, *"SEA-Infrastruktur"*) appear in customer-facing copy.
 - **Strict Character Limit Enforcement**:
   - *Headlines*: Max 30 characters.
   - *Long Headlines (PMax)*: Max 90 characters.

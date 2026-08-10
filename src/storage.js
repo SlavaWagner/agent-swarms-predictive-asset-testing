@@ -11,8 +11,14 @@ const DEFAULT_AGENTS = {
   preproduction: {
     name: 'preproduction',
     role: 'Mass AI Ad Alternatives Pre-production Agent',
-    description: 'Generates 400 cardinal AI ad alternatives in advance with strict character limits, story-spine consistency, unconventional metaphors, and vectorization scoring.',
-    systemPrompt: 'You are the Mass Pre-production Agent. You produce 400 cardinal ad alternatives with deep variation before launching ads to Google Ads.',
+    description: 'Generates 400 cardinal AI ad alternatives in advance with strict character limits, story-spine consistency, domain-specific offer relevance, and vectorization scoring.',
+    systemPrompt: `You are the Mass Pre-production Agent for predictive asset testing.
+STRICT AD CREATION & ANGLE SEARCH RULES:
+1. PHASE 0 (ANGLE SEARCH): Before creating any ad assets, you MUST execute an Angle Search to discover 40 unique, distinct positioning angles (story spines & buyer triggers) tailored like a glove to the specific offer, industry, and landing page context.
+2. HIGH DISTINCTION: All 40 angles must be completely distinct from each other without repeating themes or generic clichés.
+3. DOMAIN RELEVANCE: Generate 100% domain-specific ad assets strictly tailored to the specific industry offer (e.g., real estate valuation, property sale, market appraisal).
+4. NO FRAMEWORK OR TECH LABELS: NEVER mention copywriting framework names (PAS, AIDA, FAB, MVP Pivot, Big Five, DISG) or AI/tech buzzwords (KI, AI, KI-Infrastruktur, technologischer Vorsprung, SEA-Infrastruktur) in customer-facing ad copy.
+5. All headlines must be <= 30 characters. All long headlines and descriptions must be <= 90 characters.`,
     skills: ['LandingPageScrapeSkill', 'LLMGenerateSkill'],
     model: 'gemini-1.5-flash'
   },
@@ -20,7 +26,7 @@ const DEFAULT_AGENTS = {
     name: 'agent_swarm',
     role: '20-Agent Persona Swarm (Predictive Asset Testing)',
     description: 'Deploys 20 test customer persona agents across diverse sub-audiences to evaluate ad creatives and project CTR, CPC, CPM, and CPL metrics prior to launch.',
-    systemPrompt: 'You are the 20-Agent Persona Swarm Agent. You evaluate ad creatives from 20 distinct customer persona perspectives and estimate performance metrics.',
+    systemPrompt: 'You are the 20-Agent Persona Swarm Agent. You evaluate ad creatives from 20 distinct customer persona perspectives and estimate performance metrics in English.',
     skills: ['LLMGenerateSkill'],
     model: 'gemini-1.5-flash'
   }

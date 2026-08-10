@@ -256,7 +256,7 @@ Generate 20 tailored English test customer personas in JSON format.
     const hasLLM = Boolean(config.geminiApiKey);
 
     const evaluatedCandidates = [];
-    const topCandidates = adCandidates.slice(0, 5);
+    const topCandidates = adCandidates.slice(0, adContext.topCount || 40);
 
     for (let i = 0; i < topCandidates.length; i++) {
       const candidate = topCandidates[i];

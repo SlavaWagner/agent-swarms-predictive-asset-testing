@@ -170,7 +170,7 @@ program
 
         const winner = swarm.evaluatedCandidates[0];
         if (winner) {
-          console.log(chalk.bold.green(`[WINNER] AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
+          console.log(chalk.bold.green(`[WINNER] TOP AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
           console.log(`   Matrix Grade & Score: Grade ${winner.matrixGrade} (${winner.matrixScore}/10)`);
           console.log(`   Swarm Approval Rate:  ${winner.swarmSummary.approvalRatePercent}% (${winner.swarmSummary.approvedAgentsCount}/20 Agents Approved)`);
           console.log(chalk.cyan(`   Proportionale Metriken-Prognose (Hochrechnung):`));
@@ -178,14 +178,22 @@ program
           console.log(`     - Ø CPC:  €${winner.swarmSummary.projectedMetrics.cpcEuro}`);
           console.log(`     - Ø CPM:  €${winner.swarmSummary.projectedMetrics.cpmEuro}`);
           console.log(`     - Ø CPL:  €${winner.swarmSummary.projectedMetrics.costPerLeadEuro}`);
-
-          console.log(chalk.bold.yellow('\n--- Outtake: Top Agent Statements (Sub-Audiences) ---'));
-          winner.agentStatements.slice(0, 5).forEach(stmt => {
-            console.log(chalk.bold.white(`• [${stmt.personaId}] ${stmt.personaName} (Score: ${stmt.score}/10):`));
-            console.log(chalk.gray(`  ${stmt.statement}`));
-            console.log(chalk.gray(`  [CTR: ${stmt.projectedCTR}% | CPC: €${stmt.projectedCPC} | CPM: €${stmt.projectedCPM} | CPL: €${stmt.projectedCPL}]`));
-          });
         }
+
+        console.log(chalk.bold.yellow('\n========================================================================================================'));
+        console.log(chalk.bold.cyan('TABULAR OUTPUT: ALL 40 EVALUATED AD ALTERNATIVES WITH AGENT SWARM FINDINGS'));
+        console.log(chalk.bold.yellow('========================================================================================================'));
+
+        swarm.evaluatedCandidates.forEach((cand, idx) => {
+          console.log(chalk.bold.white(`\n#${(idx + 1).toString().padStart(2, '0')} [${cand.candidateId}] ${cand.spineTheme}`));
+          console.log(chalk.gray(`   Grade: ${cand.matrixGrade} (${cand.matrixScore}/10) | Framework: ${cand.vectorization.d1_framework} | Angle: ${cand.vectorization.d2_angle}`));
+          console.log(chalk.cyan(`   Swarm Approval: ${cand.swarmSummary.approvalRatePercent}% | Est. CTR: ${cand.swarmSummary.projectedMetrics.ctrPercent}% | Est. CPC: €${cand.swarmSummary.projectedMetrics.cpcEuro} | Est. CPL: €${cand.swarmSummary.projectedMetrics.costPerLeadEuro}`));
+          console.log(chalk.yellow(`   Top Persona Findings & O-Ton Statements:`));
+          cand.agentStatements.slice(0, 3).forEach(stmt => {
+            console.log(chalk.gray(`     - [${stmt.personaId}] ${stmt.personaName} (${stmt.score}/10): ${stmt.statement}`));
+          });
+        });
+        console.log(chalk.bold.yellow('\n========================================================================================================\n'));
       }
 
       const __filename = fileURLToPath(import.meta.url);
