@@ -95,8 +95,29 @@ export async function generateText(apiKey, systemPrompt, userPrompt, modelName =
             "Kontrolle und Effizienz für Ihre Google Ads in Premium-Segmenten."
           ]
         };
-        console.log(chalk.green('[AUTOMATION] Automatically returning mock Reviewer response.'));
-        return JSON.stringify(reviewerMock);
+      } else if (systemPrompt.includes('Swarm Architect') || userPrompt.includes('DYNAMIC PERSONA GENERATION')) {
+        const personasMock = Array.from({ length: 20 }, (_, idx) => ({
+          id: `SWARM-${(idx + 1).toString().padStart(2, '0')}`,
+          name: `Dynamic Persona ${idx + 1}`,
+          role: `Role ${idx + 1}`,
+          focus: `Key priority for offer`,
+          mindset: `Evaluates ad creative carefully.`
+        }));
+        console.log(chalk.green('[AUTOMATION] Automatically returning mock Dynamic Personas response.'));
+        return JSON.stringify(personasMock);
+      } else if (systemPrompt.includes('Swarm testing') || userPrompt.includes('AD DRAFT FOR EVALUATION')) {
+        const evalMock = Array.from({ length: 20 }, (_, idx) => ({
+          personaId: `SWARM-${(idx + 1).toString().padStart(2, '0')}`,
+          personaName: `Dynamic Persona ${idx + 1}`,
+          score: 8.0,
+          statement: `The proposed offer and messaging align strongly with my expectations.`,
+          projectedCTR: 7.5,
+          projectedCPC: 2.20,
+          projectedCPM: 30.00,
+          projectedCPL: 42.00
+        }));
+        console.log(chalk.green('[AUTOMATION] Automatically returning mock Swarm Evaluation response.'));
+        return JSON.stringify(evalMock);
       }
     }
 

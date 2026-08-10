@@ -159,8 +159,12 @@ export default class PreproductionAgent extends BaseAgent {
     if (runSwarmTest) {
       this.log(`\n[LAUNCH] Starting 20-Agent Swarm for Predictive Asset Testing...`);
       // Take top Grade A candidates (or Grade B if A is small)
-      const topCandidates = [...gradeA, ...gradeB].slice(0, 10);
-      swarmReport = await this.agentSwarm.runPredictiveTesting(topCandidates, track, 'Immobilien & High-Price Lead Gen');
+      swarmReport = await this.agentSwarm.runPredictiveTesting(topCandidates, track, options.theme || 'Immobilien & High-Price Lead Gen', {
+        theme: options.theme,
+        finalUrl,
+        headlines: targetAd ? targetAd.headlines : [],
+        descriptions: targetAd ? targetAd.descriptions : []
+      });
     }
 
     const report = {

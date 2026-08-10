@@ -6,28 +6,28 @@ import json
 import os
 import datetime
 
-# Define 20 Test Customer Personas for Agent Swarm
+# Define 20 Test Customer Personas for Agent Swarm in English
 SWARM_PERSONAS = [
-    {"id": "SWARM-01", "name": "Early Tech Adopter (m/28)", "focus": "Effizienz & KI-Innovation"},
-    {"id": "SWARM-02", "name": "Skeptischer Bedenkenträger (m/54)", "focus": "Transparenz & Garantie"},
-    {"id": "SWARM-03", "name": "Erstkäufer & Junge Familie (f/32)", "focus": "Planungssicherheit"},
-    {"id": "SWARM-04", "name": "Klassischer Kapitalanleger (m/48)", "focus": "Mietrendite & Cashflow"},
-    {"id": "SWARM-05", "name": "Vorsichtige Bausparerin (f/42)", "focus": "Grundsolide Absicherung"},
-    {"id": "SWARM-06", "name": "Immobilien-Erbe (m/39)", "focus": "Wert-Erhalt & Abwicklung"},
-    {"id": "SWARM-07", "name": "Vermögensvererber (m/67)", "focus": "Nachlassplanung"},
-    {"id": "SWARM-08", "name": "Urban Career Professional (f/35)", "focus": "Zeitgewinn & Premium-Service"},
-    {"id": "SWARM-09", "name": "Konservativer Vermögensschützer (m/61)", "focus": "Betongold & Kaufkraft-Erhalt"},
-    {"id": "SWARM-10", "name": "ESG & Sustainability Fan (f/31)", "focus": "Energieeffizienz & ESG"},
-    {"id": "SWARM-11", "name": "Schnäppchen- & Value-Jäger (m/44)", "focus": "Unterbewertete Deals"},
-    {"id": "SWARM-12", "name": "Gewerbe- & Portfoliokäufer (m/52)", "focus": "Skalierung & B2B"},
-    {"id": "SWARM-13", "name": "Suburban Relocator (f/37)", "focus": "Platz & Lebensqualität"},
-    {"id": "SWARM-14", "name": "Downsizer / Best-Ager (f/64)", "focus": "Komfort & Barrierefreiheit"},
-    {"id": "SWARM-15", "name": "Tech Entrepreneur (m/33)", "focus": "Leverage & Autonomie"},
-    {"id": "SWARM-16", "name": "Mehrgenerationen-Planerin (f/45)", "focus": "Zusammenhalt & Flexibilität"},
-    {"id": "SWARM-17", "name": "Passives-Einkommen-Seeker (m/36)", "focus": "Hands-off Ertrag"},
-    {"id": "SWARM-18", "name": "Luxus- & Prestige-Käufer (m/46)", "focus": "Exklusivität & Status"},
-    {"id": "SWARM-19", "name": "Value-Add Renovator (m/41)", "focus": "Aufwertungspotenzial"},
-    {"id": "SWARM-20", "name": "Institutioneller Anleger (f/58)", "focus": "Governance & Stabilität"}
+    {"id": "SWARM-01", "name": "Early Tech Adopter (m/28)", "focus": "Efficiency, Automation & Modern Tech Stack", "role": "Innovation Driver"},
+    {"id": "SWARM-02", "name": "Skeptical Auditor (m/54)", "focus": "Transparency, Data Proof & Risk Reduction", "role": "Risk-Averse Controller"},
+    {"id": "SWARM-03", "name": "First-Time Buyer (f/32)", "focus": "Planning Security & Transparent Pricing", "role": "Entry-Level Customer"},
+    {"id": "SWARM-04", "name": "ROI-Driven Investor (m/48)", "focus": "ROI, Net Margins & Cashflow Growth", "role": "Yield & Performance Specialist"},
+    {"id": "SWARM-05", "name": "Cautious Conservative (f/42)", "focus": "Solid Protection & Established Frameworks", "role": "Security-Oriented Decision Maker"},
+    {"id": "SWARM-06", "name": "Legacy Asset Manager (m/39)", "focus": "Value Preservation & Seamless Execution", "role": "Substance Specialist"},
+    {"id": "SWARM-07", "name": "Senior Estate Planner (m/67)", "focus": "Generational Protection & Tax Optimization", "role": "Generational Advisor"},
+    {"id": "SWARM-08", "name": "Urban Career Executive (f/35)", "focus": "Time Savings & Premium Execution", "role": "Time-Constrained Manager"},
+    {"id": "SWARM-09", "name": "Conservative Wealth Protector (m/61)", "focus": "Inflation Defense & Asset Security", "role": "Capital Protection Specialist"},
+    {"id": "SWARM-10", "name": "ESG & Sustainability Advocate (f/31)", "focus": "Eco-Efficiency & Future-Proofing", "role": "Sustainability Specialist"},
+    {"id": "SWARM-11", "name": "Value & Deal Hunter (m/44)", "focus": "Undervalued Deals & Pricing Leverage", "role": "Cost-Performance Optimizer"},
+    {"id": "SWARM-12", "name": "Commercial Portfolio Scaler (m/52)", "focus": "Scalability & Enterprise B2B Metrics", "role": "Multi-Unit Investor"},
+    {"id": "SWARM-13", "name": "Suburban Relocator (f/37)", "focus": "Quality of Life, Space & Experience", "role": "Growth Seeker"},
+    {"id": "SWARM-14", "name": "Downsizer / Best-Ager (f/64)", "focus": "Low Maintenance & Accessibility", "role": "Low-Maintenance Advocate"},
+    {"id": "SWARM-15", "name": "Tech Entrepreneur (m/33)", "focus": "Asymmetrical Leverage & AI Automation", "role": "Scaling Founder"},
+    {"id": "SWARM-16", "name": "Multi-Stakeholder Planner (f/45)", "focus": "Organizational Alignment & Flexibility", "role": "Team Coordinator"},
+    {"id": "SWARM-17", "name": "Passive Income Seeker (m/36)", "focus": "Automated Hands-Off Returns", "role": "Hands-Off Customer"},
+    {"id": "SWARM-18", "name": "Prestige & Status Buyer (m/46)", "focus": "Exclusivity & Brand Distinction", "role": "High-End Status Buyer"},
+    {"id": "SWARM-19", "name": "Value-Add Practitioner (m/41)", "focus": "Equity Creation & Upside Potential", "role": "Growth Optimizer"},
+    {"id": "SWARM-20", "name": "Institutional Board Director (f/58)", "focus": "Governance, Compliance & Risk Control", "role": "Regulated Officer"}
 ]
 
 # Unconventional Angles & Metaphors
@@ -135,7 +135,7 @@ def generate_campaign_data(total_count=400):
     print(f"[SUCCESS] {total_count} AI-Anzeigenalternativen erfolgreich vorproduziert & matriziert!")
     print(f"  Grade A: {grade_counts['A']} | Grade B: {grade_counts['B']} | Grade C: {grade_counts['C']} | Grade D: {grade_counts['D']}")
 
-    # Simulate 20-Agent Swarm for Top Grade A Candidates
+    # Simulate 20-Agent Swarm for Top Grade A Candidates in English
     top_candidate = preproduced_ads[0]
     swarm_evaluations = []
     for idx, p in enumerate(SWARM_PERSONAS):
@@ -145,7 +145,7 @@ def generate_campaign_data(total_count=400):
             "persona_name": p["name"],
             "focus": p["focus"],
             "score": p_score,
-            "statement": f"Der Story-Spin '{top_candidate['story_spin']}' spricht mich als {p['focus']} direkt an.",
+            "statement": f"The story spin '{top_candidate['story_spin']}' directly addresses my core priority as a {p['role']}.",
             "projected_ctr_percent": round(4.5 + (p_score / 10) * 4.0, 2),
             "projected_cpc_euro": round(3.50 - (p_score / 10) * 1.50, 2),
             "projected_cpm_euro": round(28.00 + (10 - p_score) * 2.50, 2),

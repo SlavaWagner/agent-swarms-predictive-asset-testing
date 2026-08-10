@@ -77,27 +77,29 @@ Assigns action-oriented grades:
 - **Grade D ($< 5.0$)**: Noise – *Kill / archivieren*
 
 ### 3. The 20-Agent Persona Swarm (`AgentSwarm`)
-Deploys 20 test customer agents with distinct demographic & psychographic profiles:
-1. `SWARM-01`: **Early Tech Adopter (m/28)** – Tech-affine innovation driver.
-2. `SWARM-02`: **Skeptischer Bedenkenträger (m/54)** – Hyper-critical, risk-averse auditor.
-3. `SWARM-03`: **Erstkäufer & Junge Familie (f/32)** – Family security & budget transparency.
-4. `SWARM-04`: **Klassischer Kapitalanleger (m/48)** – Cashflow, yield & ROI focused.
-5. `SWARM-05`: **Vorsichtige Bausparerin (f/42)** – Solid protection & stability seeker.
-6. `SWARM-06`: **Immobilien-Erbe (m/39)** – Value preservation & hassle-free management.
-7. `SWARM-07`: **Vermögensvererber (m/67)** – Estate planning & tax-optimized transfer.
-8. `SWARM-08`: **Urban Career Professional (f/35)** – Premium service & time optimization.
-9. `SWARM-09`: **Konservativer Vermögensschützer (m/61)** – Asset security & inflation defense.
-10. `SWARM-10`: **ESG & Sustainability Fan (f/31)** – Eco-efficiency & ESG compliance.
-11. `SWARM-11`: **Schnäppchen- & Value-Jäger (m/44)** – Price-performance arbitrage.
-12. `SWARM-12`: **Gewerbe- & Portfoliokäufer (m/52)** – Multi-unit B2B scaling.
-13. `SWARM-13`: **Suburban Relocator (f/37)** – Space & lifestyle upgrade.
-14. `SWARM-14`: **Downsizer / Best-Ager (f/64)** – Accessibility & low maintenance.
-15. `SWARM-15`: **Tech Entrepreneur (m/33)** – Automation & asymmetrical leverage.
-16. `SWARM-16`: **Mehrgenerationen-Planerin (f/45)** – Family cohesion & flexibility.
-17. `SWARM-17`: **Passives-Einkommen-Seeker (m/36)** – Hands-off yield management.
-18. `SWARM-18`: **Luxus- & Prestige-Käufer (m/46)** – Exclusivity & architectural status.
-19. `SWARM-19`: **Value-Add Renovator (m/41)** – Value appreciation potential.
-20. `SWARM-20`: **Institutioneller Anleger (f/58)** – Governance & low risk.
+Dynamically generates 20 test customer personas in **ENGLISH** derived directly from the ad copy (Anzeigentext), offer, branding/industry, and target audience context.
+
+Whether testing B2B SaaS, Real Estate, Financial Services, or E-Commerce, the 20 Persona Agents adapt dynamically to evaluate ad creatives across key sub-audience archetypes:
+1. `SWARM-01`: **Early Tech Adopter (m/28)** – Tech-savvy innovation driver seeking modern tech stack.
+2. `SWARM-02`: **Skeptical Auditor (m/54)** – Hyper-critical, risk-averse quality controller demanding proof.
+3. `SWARM-03`: **First-Time Buyer (f/32)** – Entry-level customer seeking planning security & clear pricing.
+4. `SWARM-04`: **ROI-Driven Investor (m/48)** – Yield & cashflow strategist focused on metrics and ROI.
+5. `SWARM-05`: **Cautious Conservative (f/42)** – Security-oriented decision maker requiring proven frameworks.
+6. `SWARM-06`: **Legacy Asset Manager (m/39)** – Value preserver looking for seamless execution.
+7. `SWARM-07`: **Senior Estate Planner (m/67)** – Generational wealth advisor evaluating long-term protection.
+8. `SWARM-08`: **Urban Career Executive (f/35)** – Time-constrained senior manager seeking premium service.
+9. `SWARM-09`: **Conservative Wealth Protector (m/61)** – Capital protection specialist focused on stability.
+10. `SWARM-10`: **ESG & Sustainability Advocate (f/31)** – Sustainability specialist prioritizing future-proofing.
+11. `SWARM-11`: **Value & Deal Hunter (m/44)** – Cost-performance optimizer seeking value leverage.
+12. `SWARM-12`: **Commercial Portfolio Scaler (m/52)** – Multi-unit B2B investor evaluating enterprise metrics.
+13. `SWARM-13`: **Suburban Relocator (f/37)** – Growth seeker looking for lifestyle and operational upgrade.
+14. `SWARM-14`: **Downsizer / Best-Ager (f/64)** – Comfort advocate seeking low-maintenance simplicity.
+15. `SWARM-15`: **Growth Tech Entrepreneur (m/33)** – Scaling founder seeking asymmetrical leverage.
+16. `SWARM-16`: **Multi-Stakeholder Planner (f/45)** – Organizational planner balancing multi-decision-maker needs.
+17. `SWARM-17`: **Passive Income Seeker (m/36)** – Hands-off customer seeking stress-free automated yield.
+18. `SWARM-18`: **Prestige & Status Buyer (m/46)** – High-end buyer seeking exclusivity & brand prestige.
+19. `SWARM-19`: **Value-Add Specialist (m/41)** – Hands-on growth optimizer looking for equity upside.
+20. `SWARM-20`: **Institutional Board Director (f/58)** – Regulated governance officer demanding compliance.
 
 ---
 

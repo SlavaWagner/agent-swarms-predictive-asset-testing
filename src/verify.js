@@ -57,13 +57,24 @@ async function runTests() {
     assert(false, `Test 2 failed with error: ${err.message}`);
   }
 
-  // Test 3: 20-Agent Swarm Persona Setup
+  // Test 3: 20-Agent Swarm Dynamic Persona Generation in English
   try {
-    console.log(chalk.yellow('\nTest 3: 20-Agent Swarm Setup...'));
+    console.log(chalk.yellow('\nTest 3: 20-Agent Swarm Dynamic Persona Setup in English...'));
     const swarm = new AgentSwarm();
-    assert(swarm.personas.length === 20, `Expected 20 personas, found ${swarm.personas.length}`);
+    assert(swarm.personas.length === 20, `Expected 20 default personas, found ${swarm.personas.length}`);
     assert(swarm.personas[0].id === 'SWARM-01', 'First persona should be SWARM-01');
     assert(swarm.personas[19].id === 'SWARM-20', 'Last persona should be SWARM-20');
+
+    // Test dynamic persona generation from ad context
+    const dynamicPersonas = await swarm.generateDynamicPersonas({
+      theme: 'B2B SaaS Lead Generation',
+      headlines: ['Scale SaaS Pipeline Automatically', 'B2B Lead Engine 2026'],
+      descriptions: ['Get 50+ qualified B2B leads monthly with automated AI workflows.']
+    });
+
+    assert(dynamicPersonas.length === 20, `Expected 20 dynamic personas, found ${dynamicPersonas.length}`);
+    assert(swarm.currentIndustry.includes('B2B') || swarm.currentIndustry.includes('SaaS'), `Expected derived industry to reflect B2B SaaS, got "${swarm.currentIndustry}"`);
+    assert(dynamicPersonas[0].focus.includes('B2B') || dynamicPersonas[0].focus.includes('SaaS') || dynamicPersonas[0].focus.includes('Efficiency'), 'Dynamic persona focus should be in English');
   } catch (err) {
     assert(false, `Test 3 failed with error: ${err.message}`);
   }

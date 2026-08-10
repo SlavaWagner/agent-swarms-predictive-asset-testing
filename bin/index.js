@@ -148,8 +148,13 @@ program
       console.log(`Top Candidate Ad ID:                    ${report.decisionMatrixSummary.topScoringAdId} (Score: ${report.decisionMatrixSummary.highestScore}/10)`);
 
       if (report.swarmPredictiveReport) {
-        console.log(chalk.bold.magenta('\n=== 20-AGENT PERSONA SWARM STATEMENT & PREDICTIVE METRICS ==='));
         const swarm = report.swarmPredictiveReport;
+        console.log(chalk.bold.magenta('\n=== 20-AGENT DYNAMIC PERSONA SWARM (ENGLISH) ==='));
+        console.log(`Derived Industry:       ${chalk.bold.green(swarm.industry || 'N/A')}`);
+        console.log(`Derived Offer:          ${chalk.bold.green(swarm.offer || 'N/A')}`);
+        console.log(`Target Audience:        ${chalk.bold.cyan(swarm.targetAudience || 'N/A')}`);
+        console.log(`Swarm Language:         ${chalk.bold.yellow('ENGLISH (Dynamic Personas)')}\n`);
+
         const winner = swarm.evaluatedCandidates[0];
         if (winner) {
           console.log(chalk.bold.green(`[WINNER] AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
