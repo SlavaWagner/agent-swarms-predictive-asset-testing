@@ -16,7 +16,7 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
 **Agent Swarms for Predictive Asset Testing** solves this bottleneck:
 1. **Mass Pre-production**: Automatically generates up to 400 cardinal AI ad alternatives (RSA & Performance Max Asset Groups) in advance based on your campaign topic and baseline ad copy.
 2. **AI Asset Decision Matrix Scoring**: Applies a 6-dimensional asset vectorization (D1–D6) and scores every ad on 5 orthogonal score axes (Conversion, Audience Fit, Sentiment, Hook Interrupt, Tension Curve) to classify them into **Grades A, B, C, and D**.
-3. **20-Agent Persona Swarm Testing**: Deploys a swarm of 20 distinct test customer persona agents across diverse sub-audiences (e.g. *Early Adopter*, *Bedenkenträger*, *Erstkäufer*, *Kapitalanleger*, *Erben*, etc.) to evaluate ad creatives prior to launch.
+3. **20-Agent Persona Swarm Testing**: Dynamically generates a swarm of 20 distinct test customer persona agents in **ENGLISH** tailored specifically to the offer, industry, and target audience derived from the ad creative.
 4. **Predictive Performance Projections**: Returns qualitative persona statements alongside proportional estimations for **CTR (%)**, **CPC (€)**, **CPM (€)**, and **Cost per Lead (CPL €)**.
 
 > **No Google Ads API Authentication Required!**  
@@ -42,8 +42,8 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
                │
                ▼
  ┌───────────────────────────┐
- │ 3. 20-Agent Persona       │ ──► 20 Test Customer Sub-Audiences Evaluate Creatives
- │    Swarm Testing          │     Returns O-Ton Feedback & Projections
+ │ 3. 20-Agent Persona       │ ──► 20 Dynamic Test Customer Sub-Audiences Evaluate Creatives
+ │    Swarm Testing          │     Returns Direct Feedback & Projections in English
  └─────────────┬─────────────┘
                │
                ▼
@@ -52,7 +52,7 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
 
 ### 1. Mass Pre-production Engine (`PreproductionAgent`)
 - **Asset Spine**: Ensures all headline and description assets follow a cohesive story spin and campaign theme.
-- **Unconventional Angles & Metaphors**: Utilizes high-converting positioning frames (*Asset-Festung*, *Asymmetrischer Hebel*, *Rendite-Teleskop*, *Paradoxer Anker*, *Der Lautlose Beschleuniger*) while avoiding tired clichés (e.g. "Zeit sparen", "Stress sparen").
+- **Unconventional Angles & Metaphors**: Utilizes high-converting positioning frames (*Asset Fortress*, *Asymmetrical Leverage*, *Yield Telescope*, *Paradoxical Anchor*, *Silent Accelerator*) while avoiding tired clichés (e.g. "save time", "reduce stress").
 - **Strict Character Limit Enforcement**:
   - *Headlines*: Max 30 characters.
   - *Long Headlines (PMax)*: Max 90 characters.
@@ -71,13 +71,13 @@ Calculates a weighted composite score:
 $$\text{weighted\_score} = 0.35 \cdot \text{conversion} + 0.20 \cdot \text{audience} + 0.15 \cdot \text{hook} + 0.15 \cdot \text{tension} + 0.15 \cdot \text{sentiment}$$
 
 Assigns action-oriented grades:
-- **Grade A ($\ge 8.0$)**: PMF-Kandidat – *Skalieren / Budget hoch*
-- **Grade B ($6.5 - 7.9$)**: Testwürdig – *Mehr Varianten erzeugen*
-- **Grade C ($5.0 - 6.4$)**: Grenzwertig – *Nur Low-Budget testen*
-- **Grade D ($< 5.0$)**: Noise – *Kill / archivieren*
+- **Grade A ($\ge 8.0$)**: PMF Candidate – *Scale Up / Increase Budget*
+- **Grade B ($6.5 - 7.9$)**: Test-Worthy – *Generate More Variants*
+- **Grade C ($5.0 - 6.4$)**: Marginal – *Test Low Budget Only*
+- **Grade D ($< 5.0$)**: Noise – *Kill / Archive*
 
 ### 3. The 20-Agent Persona Swarm (`AgentSwarm`)
-Dynamically generates 20 test customer personas in **ENGLISH** derived directly from the ad copy (Anzeigentext), offer, branding/industry, and target audience context.
+Dynamically generates 20 test customer personas in **ENGLISH** derived directly from the ad copy, offer, branding/industry, and target audience context.
 
 Whether testing B2B SaaS, Real Estate, Financial Services, or E-Commerce, the 20 Persona Agents adapt dynamically to evaluate ad creatives across key sub-audience archetypes:
 1. `SWARM-01`: **Early Tech Adopter (m/28)** – Tech-savvy innovation driver seeking modern tech stack.
@@ -129,15 +129,15 @@ npm test
 ### 1. Mass Pre-production & 20-Agent Swarm Testing
 Generate 400 AI ad alternatives, matrix score them, and run predictive testing with the 20-Agent Swarm:
 ```bash
-agent-swarms-predictive-asset-testing preproduce --theme "Immobilien Lead-Gen" --count 400
+agent-swarms-predictive-asset-testing preproduce --theme "Real Estate Lead Gen" --count 400
 ```
 Or use the short alias:
 ```bash
-predictive-asset-testing preproduce -t "B2B SaaS Lead-Gen" -k pmax -c 400
+predictive-asset-testing preproduce -t "B2B SaaS Lead Gen" -k pmax -c 400
 ```
 
 #### Command Options:
-- `-t, --theme <topic>`: Campaign focus theme (Default: `"Immobilien & High-Price Lead Gen"`)
+- `-t, --theme <topic>`: Campaign focus theme (Default: `"Real Estate & High-Ticket Lead Gen"`)
 - `-k, --track <rsa|pmax>`: Campaign track (`rsa` or `pmax`, Default: `rsa`)
 - `-c, --count <number>`: Number of ad alternatives to generate (Default: `400`)
 - `-u, --url <url>`: Target landing page URL for scraping context
@@ -165,7 +165,7 @@ Open your browser at `http://localhost:8080`.
 ```text
 === Mass AI Ad Pre-production & 20-Agent Swarm Testing ===
 
-Campaign Focus Theme:   Immobilien Lead-Gen
+Campaign Focus Theme:   Real Estate Lead Gen
 Track:                  RSA
 Target Quantity:        400 AI Ad Alternatives
 Landing Page URL:       https://www.slavawagner.de
@@ -174,16 +174,21 @@ Landing Page URL:       https://www.slavawagner.de
 [OK] Generated & Vectorized 400 AI Ad Alternatives!
 
 === AI ASSET DECISION MATRIX SCORING SUMMARY ===
-Grade A (PMF-Kandidaten / Skalieren):   231
-Grade B (Testwürdig / Mehr Varianten):  169
-Grade C (Grenzwertig / Low-Budget):     0
+Grade A (PMF Candidates / Scale Up):   231
+Grade B (Test-Worthy / More Variants):  169
+Grade C (Marginal / Low-Budget):        0
 Grade D (Noise / Kill):                0
 
-=== 20-AGENT PERSONA SWARM STATEMENT & PREDICTIVE METRICS ===
+=== 20-AGENT DYNAMIC PERSONA SWARM (ENGLISH) ===
+Derived Industry:       Real Estate & High-Ticket Investments
+Derived Offer:          Asset Fortress | Exclusive PAS Strategy
+Target Audience:        High-Net-Worth Investors & Property Buyers
+Swarm Language:         ENGLISH (Dynamic Personas)
+
 [WINNER] AD ALTERNATIVE TO LAUNCH: PREPROD-RSA-0016
    Matrix Grade & Score: Grade A (8.02/10)
    Swarm Approval Rate:  100% (20/20 Agents Approved)
-   Proportionale Metriken-Prognose (Hochrechnung):
+   Proportional Metrics Projection:
      - Ø CTR:  7.7%
      - Ø CPC:  €2.90
      - Ø CPM:  €35.36
@@ -191,10 +196,10 @@ Grade D (Noise / Kill):                0
 
 --- Outtake: Top Agent Statements (Sub-Audiences) ---
 • [SWARM-01] Early Tech Adopter (m/28) (Score: 7.1/10):
-  "Guter Ansatz mit dem Framework MVP Pivot. Klare Argumentation und verständlicher Call-to-Action."
+  "Great approach using the MVP Pivot framework. Clear value proposition and understandable call-to-action."
   [CTR: 6.91% | CPC: €2.66 | CPM: €34.15 | CPL: €69.75]
-• [SWARM-03] Erstkäufer & Junge Familie (f/32) (Score: 8.5/10):
-  "Der Story-Spin 'Transformative Aufwertung' holt mich genau an meinem Schmerzpunkt ab. Diese Ansprache hebt sich deutlich von der Konkurrenz ab!"
+• [SWARM-03] First-Time Buyer (f/32) (Score: 8.5/10):
+  "The story spin 'Transformative Appreciation' directly hits my core priority. This messaging stands out clearly from competitors!"
   [CTR: 8.38% | CPC: €2.94 | CPM: €33.45 | CPL: €65.65]
 
 [OK] Report & Asset Catalog saved persistently to:
