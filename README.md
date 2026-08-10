@@ -127,14 +127,32 @@ npm test
 
 ## CLI Usage & Commands
 
-### 1. Mass Pre-production & 20-Agent Swarm Testing
-Generate 400 AI ad alternatives, matrix score them, and run predictive testing with the 20-Agent Swarm:
+### 1. Google Ads OAuth Setup
+Configure your Gemini API key and OAuth2 credentials to connect directly to your Google Ads Account:
+```bash
+agent-swarms-predictive-asset-testing setup
+```
+
+### 2. Direct Google Ads AI Alternative Creation (RSAs & PMax Asset Groups)
+Fetch active ads or asset groups directly from your Google Ads Account, create AI alternatives, verify compliance, and upload them as `PAUSED` creatives ready for review in Google Ads:
+
+- **Create Responsive Search Ad (RSA) Alternatives**:
+  ```bash
+  agent-swarms-predictive-asset-testing run-rsa
+  ```
+- **Create Performance Max (PMax) Asset Group Alternatives**:
+  ```bash
+  agent-swarms-predictive-asset-testing run-pmax
+  ```
+
+### 3. Mass Pre-production, Google Ads Baseline Stream & ETS Forecast
+Generate up to 400 AI ad alternatives, pull 30-day historical baseline performance directly from your Google Ads Account, run Holt-Winters ETS time-series forecasting, and execute 20-Agent Swarm testing:
 ```bash
 agent-swarms-predictive-asset-testing preproduce --theme "Real Estate Lead Gen" --count 400
 ```
 Or use the short alias:
 ```bash
-predictive-asset-testing preproduce -t "B2B SaaS Lead Gen" -k pmax -c 400
+predictive-asset-testing preproduce -t "Immobilienbewertung Berlin" -k pmax -c 400
 ```
 
 #### Command Options:
@@ -146,13 +164,13 @@ predictive-asset-testing preproduce -t "B2B SaaS Lead Gen" -k pmax -c 400
 - `-d, --descriptions <list...>`: Existing baseline descriptions to evaluate against
 - `--no-swarm`: Skip 20-Agent Swarm testing phase
 
-### 2. Standalone 20-Agent Swarm Predictive Testing
+### 4. Standalone 20-Agent Swarm Predictive Testing
 Test existing or candidate ad copy directly against the 20 sub-audience personas:
 ```bash
 predictive-asset-testing swarm-test --track rsa
 ```
 
-### 3. Visual Web Dashboard Server
+### 5. Visual Web Dashboard Server
 Launch the interactive web dashboard to view visual matrix scoring tables and agent statements:
 ```bash
 predictive-asset-testing dashboard
