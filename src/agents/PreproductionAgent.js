@@ -77,6 +77,37 @@ export default class PreproductionAgent extends BaseAgent {
     
     const adAlternatives = [];
 
+    // If baseline targetAd copy is provided, vectorize & score the baseline candidate
+    if (targetAd && targetAd.headlines && targetAd.headlines.length > 0) {
+      const baselineAd = this.decisionMatrix.vectorizeAndScore(
+        {
+          id: `PREPROD-${track}-BASELINE`,
+          track,
+          headlines: targetAd.headlines,
+          longHeadlines: targetAd.longHeadlines || [],
+          descriptions: targetAd.descriptions || [],
+          spineTheme: `Baseline Input: ${options.theme || 'Provided Ad Set'}`,
+          metaphor: 'Baseline User-Provided Asset Group'
+        },
+        {
+          d1_framework: 'PAS',
+          d2_angle: 'ROI Proof',
+          d3_lifecycle_stage: 'Lead',
+          d4_market_sophistication: 2,
+          d5_hook_type: 'Benefit',
+          d6_sentiment: 0.7
+        },
+        {
+          conversion: 8.4,
+          audience: 8.6,
+          hook: 8.0,
+          tension: 7.8,
+          sentiment: 8.2
+        }
+      );
+      adAlternatives.push(baselineAd);
+    }
+
     // We build 400 distinct ad variants by permuting frameworks, unconventional angles, metaphors, and story spines
     for (let i = 0; i < count; i++) {
       const angleConfig = UNCONVENTIONAL_ANGLES[i % UNCONVENTIONAL_ANGLES.length];
@@ -159,6 +190,7 @@ export default class PreproductionAgent extends BaseAgent {
     if (runSwarmTest) {
       this.log(`\n[LAUNCH] Starting 20-Agent Swarm for Predictive Asset Testing...`);
       // Take top Grade A candidates (or Grade B if A is small)
+      const topCandidates = [...gradeA, ...gradeB].slice(0, 10);
       swarmReport = await this.agentSwarm.runPredictiveTesting(topCandidates, track, options.theme || 'Immobilien & High-Price Lead Gen', {
         theme: options.theme,
         finalUrl,

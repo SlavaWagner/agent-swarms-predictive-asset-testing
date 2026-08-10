@@ -104,6 +104,7 @@ program
   .option('-c, --count <number>', 'Number of AI ad alternatives to generate', '400')
   .option('-u, --url <url>', 'Target landing page URL context', 'https://www.slavawagner.de')
   .option('-h, --headlines <items...>', 'Existing ad headlines to test against')
+  .option('-l, --long-headlines <items...>', 'Existing long headlines (PMax) to test against')
   .option('-d, --descriptions <items...>', 'Existing ad descriptions to test against')
   .option('--no-swarm', 'Skip 20-Agent Persona Swarm testing')
   .action(async (options) => {
@@ -126,12 +127,24 @@ program
       options.headlines.forEach(h => console.log(chalk.gray(`  - "${h}"`)));
       console.log();
     }
+    if (options.longHeadlines && options.longHeadlines.length > 0) {
+      console.log(chalk.yellow(`Baseline Long Headlines (${options.longHeadlines.length}):`));
+      options.longHeadlines.forEach(lh => console.log(chalk.gray(`  - "${lh}"`)));
+      console.log();
+    }
+    if (options.descriptions && options.descriptions.length > 0) {
+      console.log(chalk.yellow(`Baseline Input Descriptions (${options.descriptions.length}):`));
+      options.descriptions.forEach(d => console.log(chalk.gray(`  - "${d}"`)));
+      console.log();
+    }
 
     try {
       const agent = new PreproductionAgent();
       const report = await agent.preproduceAdAlternatives({
+        theme,
         targetAd: {
           headlines: options.headlines || [],
+          longHeadlines: options.longHeadlines || [],
           descriptions: options.descriptions || []
         },
         finalUrl,
