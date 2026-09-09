@@ -228,7 +228,7 @@ Swarm Language:         ENGLISH (Dynamic Personas)
 
 Zusätzlich zur CLI-Ausführung steht im Unterordner [`make-blueprints/`](make-blueprints/) ein fertiger Make.com Blueprint zur Verfügung, mit dem du die autonome Massen-Vorproduktion und das Predictive Asset Testing komplett über **Make.com mit Gemini AI Agents** ausführen kannst:
 
-*   **[`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`](make-blueprints/SWA%20Agent%20Swarms%20for%20Predictive%20Asset%20Testing%20%28Asset%20Creation%29.blueprint.json)**: Vollständiges Make-Szenario zur Angle-Discovery, multimodalen Text-Asset-Erzeugung und 20-Agent Persona Swarm Simulation (inkl. CTR-, CPC-, CPM- und CPL-Prognosen).
+*   **[`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`](make-blueprints/SWA%20Agent%20Swarms%20for%20Predictive%20Asset%20Testing%20%28Asset%20Creation%29.blueprint.json)**: Vollständiges Make-Szenario zur Angle-Discovery, multimodalen Text-Asset-Erzeugung und 5-Agent Persona Swarm Simulation (inkl. CTR-, CPC-, CPM- und CPL-Prognosen).
 
 Eine ausführliche Schritt-für-Schritt-Anleitung für den Import und die Konfiguration findest du im [Make Blueprints Guide](make-blueprints/README.md).
 

@@ -7,11 +7,11 @@ Dieses Verzeichnis enthält den vorkonfigurierten **Make.com Blueprint** (Szenar
 ## Enthaltene Blueprints
 
 ### `SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`
-* **Fokus**: Autonome Vorproduktion von Ad-Alternativen (RSAs & PMax Asset Groups) & 20-Agent Persona Swarm Testing
+* **Fokus**: Autonome Vorproduktion von Ad-Alternativen (RSAs & PMax Asset Groups) & 5-Agent Persona Swarm Testing
 * **Funktion**:
   * Vollautomatisierte Angle-Discovery und Generierung von kardinalen Anzeigenalternativen mit Story-Spine & Buyer-Motivatoren
   * Prompting der multimodalen **Gemini AI Agents** zur Erstellung und Re-Vektorisierung von Text-Assets
-  * Simulation des **20-Agent Persona Swarms** (dynamische Testkunden-Personas) zur qualitativen Bewertung und quantitativen Metriken-Prognose (CTR, CPC, CPM, CPL)
+  * Simulation des **5-Agent Persona Swarms** (dynamische Testkunden-Personas) zur qualitativen Bewertung und quantitativen Metriken-Prognose (CTR, CPC, CPM, CPL)
   * Automatisierte Einhaltung aller Zeichenbegrenzungen und Compliance-Filter (Headlines max. 30 Zeichen, Long Headlines max. 90 Zeichen, Descriptions max. 90 Zeichen)
   * Strukturierte Datenaufbereitung für den Export und die Bereitstellung in Google Ads
 
