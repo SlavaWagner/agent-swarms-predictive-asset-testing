@@ -68,14 +68,11 @@ Vectorizes every creative across **6 Input Dimensions**:
 - **D5 – Hook Type**: `Benefit` | `Proof` | `Urgency` | `Paradox` | `Curiosity` | `Uniqueness`
 - **D6 – Sentiment**: `-1.0 ... 0 ... +1.0`
 
-Calculates a weighted composite score:
-$$\text{weighted\_score} = 0.35 \cdot \text{conversion} + 0.20 \cdot \text{audience} + 0.15 \cdot \text{hook} + 0.15 \cdot \text{tension} + 0.15 \cdot \text{sentiment}$$
-
 Assigns action-oriented grades:
-- **Grade A ($\ge 8.0$)**: PMF Candidate – *Scale Up / Increase Budget*
-- **Grade B ($6.5 - 7.9$)**: Test-Worthy – *Generate More Variants*
-- **Grade C ($5.0 - 6.4$)**: Marginal – *Test Low Budget Only*
-- **Grade D ($< 5.0$)**: Noise – *Kill / Archive*
+- **Grade A (≥ 8.0)**: PMF Candidate – *Scale Up / Increase Budget*
+- **Grade B (6.5 - 7.9)**: Test-Worthy – *Generate More Variants*
+- **Grade C (5.0 - 6.4)**: Marginal – *Test Low Budget Only*
+- **Grade D (< 5.0)**: Noise – *Kill / Archive*
 
 ### 3. The 20-Agent Persona Swarm (`AgentSwarm`)
 Dynamically generates 20 test customer personas in **ENGLISH** derived directly from the ad copy, offer, branding/industry, and target audience context.
@@ -224,6 +221,16 @@ Swarm Language:         ENGLISH (Dynamic Personas)
 [OK] Report & Asset Catalog saved persistently to:
   storage/runs/preproduction-report-rsa-2026-08-01.json
 ```
+
+---
+
+## Make.com AI Agents Integration (Blueprints)
+
+Zusätzlich zur CLI-Ausführung steht im Unterordner [`make-blueprints/`](make-blueprints/) ein fertiger Make.com Blueprint zur Verfügung, mit dem du die autonome Massen-Vorproduktion und das Predictive Asset Testing komplett über **Make.com mit Gemini AI Agents** ausführen kannst:
+
+*   **[`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`](make-blueprints/SWA%20Agent%20Swarms%20for%20Predictive%20Asset%20Testing%20%28Asset%20Creation%29.blueprint.json)**: Vollständiges Make-Szenario zur Angle-Discovery, multimodalen Text-Asset-Erzeugung und 20-Agent Persona Swarm Simulation (inkl. CTR-, CPC-, CPM- und CPL-Prognosen).
+
+Eine ausführliche Schritt-für-Schritt-Anleitung für den Import und die Konfiguration findest du im [Make Blueprints Guide](make-blueprints/README.md).
 
 ---
 
