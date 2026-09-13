@@ -31,6 +31,12 @@ In traditional SEA and Performance Marketing, finding high-converting winning ad
 
 ## Architecture & Core Components
 
+<p align="center">
+  <img src="docs/images/system-circuit.svg" alt="Agent Swarms System Circuit" width="560">
+  <br>
+  <em>System Circuit Architecture — <a href="docs/system-circuit.html">View interactive standalone widget</a></em>
+</p>
+
 ```
  [Campaign Theme / Baseline Copy]
                │
@@ -135,49 +141,33 @@ Configure your Gemini API key and OAuth2 credentials to connect directly to your
 agent-swarms-predictive-asset-testing setup
 ```
 
-### 2. Direct Google Ads AI Alternative Creation (RSAs & PMax Asset Groups)
-Fetch active ads or asset groups directly from your Google Ads Account, create AI alternatives, verify compliance, and upload them as `PAUSED` creatives ready for review in Google Ads:
+### CLI & Agent Command Reference
 
-- **Create Responsive Search Ad (RSA) Alternatives**:
-  ```bash
-  agent-swarms-predictive-asset-testing run-rsa
-  ```
-- **Create Performance Max (PMax) Asset Group Alternatives**:
-  ```bash
-  agent-swarms-predictive-asset-testing run-pmax
-  ```
+Die Ausführung erfolgt innerhalb der Google Antigravity CLI (`agy`) über folgende Befehle:
 
-### 3. Mass Pre-production, Google Ads Baseline Stream & ETS Forecast
-Generate up to 400 AI ad alternatives, pull 30-day historical baseline performance directly from your Google Ads Account, run Holt-Winters ETS time-series forecasting, and execute 20-Agent Swarm testing:
+| Befehl | Argumente / Flags | Beschreibung |
+| :--- | :--- | :--- |
+| `node bin/index.js preproduce`<br>*(Alias: `run`)* | `-t, --theme <topic>`<br>`-k, --track <rsa\|pmax>`<br>`-c, --count <number>`<br>`-u, --url <url>`<br>`-h, --headlines <list...>`<br>`-l, --long-headlines <list...>`<br>`-d, --descriptions <list...>`<br>`--no-swarm` | Generiert bis zu 400 kardinale KI-Ad-Alternativen, führt die 6-D-Vektorisierung und 5-Achsen-Entscheidungsmatrix durch (Grades A–D), simuliert die 20 Persona-Agenten und berechnet die 30-Tage Holt-Winters ETS Prognose. |
+| `node bin/index.js swarm-test` | `-k, --track <rsa\|pmax>` | Führt das 20-Agenten Persona Swarm Testing isoliert auf bestehende oder neu generierte Ad-Creatives aus und gibt Akzeptanzquoten sowie CTR/CPC/CPM/CPL-Prognosen aus. |
+| `node bin/index.js dashboard` | `-p, --port <number>` *(Default: 8080)* | Startet den integrierten Visual Web Dashboard Server zur grafischen Auswertung von Entscheidungsmatrizen, Swarm-Statements und Persona-Ratings im Browser. |
+| `node bin/index.js agent list` | Keine | Listet alle registrierten persistenten Agenten (`PreproductionAgent`, Swarm Persona Archetypen) mit Rollen und Beschreibungen auf. |
+| `node bin/index.js setup` | Keine | Interaktive Konfiguration des Gemini API Keys sowie der Standard-Kampagnenthemen und Zielseiten-URLs. |
+
+#### Anwendungsbeispiele:
+
 ```bash
-agent-swarms-predictive-asset-testing preproduce --theme "Real Estate Lead Gen" --count 400
-```
-Or use the short alias:
-```bash
-predictive-asset-testing preproduce -t "Immobilienbewertung Berlin" -k pmax -c 400
-```
+# 1. 400 RSA-Alternativen mit Persona Swarm und Landing-Page-Kontext generieren:
+node bin/index.js preproduce -t "Immobilienbewertung Berlin" -k rsa -c 400 -u "https://www.slavawagner.de"
 
-#### Command Options:
-- `-t, --theme <topic>`: Campaign focus theme (Default: `"Real Estate & High-Ticket Lead Gen"`)
-- `-k, --track <rsa|pmax>`: Campaign track (`rsa` or `pmax`, Default: `rsa`)
-- `-c, --count <number>`: Number of ad alternatives to generate (Default: `400`)
-- `-u, --url <url>`: Target landing page URL for scraping context
-- `-h, --headlines <list...>`: Existing baseline headlines to evaluate against
-- `-d, --descriptions <list...>`: Existing baseline descriptions to evaluate against
-- `--no-swarm`: Skip 20-Agent Swarm testing phase
+# 2. Performance Max Asset Groups mit bestehenden Headlines testen:
+node bin/index.js preproduce -t "High-Ticket Lead Gen" -k pmax -c 200 -h "Exklusive Off-Market Deals" "Immobilien diskret verkaufen"
 
-### 4. Standalone 20-Agent Swarm Predictive Testing
-Test existing or candidate ad copy directly against the 20 sub-audience personas:
-```bash
-predictive-asset-testing swarm-test --track rsa
-```
+# 3. Reine 20-Agenten Schwarm-Simulation starten:
+node bin/index.js swarm-test -k rsa
 
-### 5. Visual Web Dashboard Server
-Launch the interactive web dashboard to view visual matrix scoring tables and agent statements:
-```bash
-predictive-asset-testing dashboard
+# 4. Visuelles Web-Dashboard öffnen:
+node bin/index.js dashboard -p 8080
 ```
-Open your browser at `http://localhost:8080`.
 
 ---
 
