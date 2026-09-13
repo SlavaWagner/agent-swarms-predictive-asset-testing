@@ -145,13 +145,12 @@ agent-swarms-predictive-asset-testing setup
 
 Die Ausführung erfolgt innerhalb der Google Antigravity CLI (`agy`) über folgende Befehle:
 
-| Befehl | Argumente / Flags | Beschreibung |
-| :--- | :--- | :--- |
-| `node bin/index.js preproduce`<br>*(Alias: `run`)* | `-t, --theme <topic>`<br>`-k, --track <rsa\|pmax>`<br>`-c, --count <number>`<br>`-u, --url <url>`<br>`-h, --headlines <list...>`<br>`-l, --long-headlines <list...>`<br>`-d, --descriptions <list...>`<br>`--no-swarm` | Generiert bis zu 400 kardinale KI-Ad-Alternativen, führt die 6-D-Vektorisierung und 5-Achsen-Entscheidungsmatrix durch (Grades A–D), simuliert die 20 Persona-Agenten und berechnet die 30-Tage Holt-Winters ETS Prognose. |
-| `node bin/index.js swarm-test` | `-k, --track <rsa\|pmax>` | Führt das 20-Agenten Persona Swarm Testing isoliert auf bestehende oder neu generierte Ad-Creatives aus und gibt Akzeptanzquoten sowie CTR/CPC/CPM/CPL-Prognosen aus. |
-| `node bin/index.js dashboard` | `-p, --port <number>` *(Default: 8080)* | Startet den integrierten Visual Web Dashboard Server zur grafischen Auswertung von Entscheidungsmatrizen, Swarm-Statements und Persona-Ratings im Browser. |
-| `node bin/index.js agent list` | Keine | Listet alle registrierten persistenten Agenten (`PreproductionAgent`, Swarm Persona Archetypen) mit Rollen und Beschreibungen auf. |
-| `node bin/index.js setup` | Keine | Interaktive Konfiguration des Gemini API Keys sowie der Standard-Kampagnenthemen und Zielseiten-URLs. |
+| Befehl | Beschreibung |
+| :--- | :--- |
+| `node bin/index.js preproduce`<br>*(Alias: `run`)* | Generiert bis zu 400 kardinale KI-Ad-Alternativen, führt die 6-D-Vektorisierung und 5-Achsen-Entscheidungsmatrix durch (Grades A–D), simuliert die 20 Persona-Agenten und berechnet die 30-Tage Holt-Winters ETS Prognose. |
+| `node bin/index.js swarm-test` | Führt das 20-Agenten Persona Swarm Testing isoliert auf bestehende oder neu generierte Ad-Creatives aus und gibt Akzeptanzquoten sowie CTR/CPC/CPM/CPL-Prognosen aus. |
+| `node bin/index.js agent list` | Listet alle registrierten persistenten Agenten (`PreproductionAgent`, Swarm Persona Archetypen) mit Rollen und Beschreibungen auf. |
+| `node bin/index.js setup` | Interaktive Konfiguration des Gemini API Keys sowie der Standard-Kampagnenthemen und Zielseiten-URLs. |
 
 #### Anwendungsbeispiele:
 
@@ -164,9 +163,6 @@ node bin/index.js preproduce -t "High-Ticket Lead Gen" -k pmax -c 200 -h "Exklus
 
 # 3. Reine 20-Agenten Schwarm-Simulation starten:
 node bin/index.js swarm-test -k rsa
-
-# 4. Visuelles Web-Dashboard öffnen:
-node bin/index.js dashboard -p 8080
 ```
 
 ---

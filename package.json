@@ -10,8 +10,7 @@
   },
   "scripts": {
     "start": "node bin/index.js",
-    "test": "node src/verify.js",
-    "dashboard": "node bin/index.js dashboard"
+    "test": "node src/verify.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
