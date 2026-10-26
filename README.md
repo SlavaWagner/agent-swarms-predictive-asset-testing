@@ -31,7 +31,7 @@ In traditional SEA and Performance Marketing, finding winning ad creatives requi
 ## Architecture & System Circuit
 
 <p align="center">
-  <img src="docs/images/system-circuit.svg" alt="Agent Swarms System Circuit" width="100%">
+  <img src="docs/images/system-circuit.png" alt="Agent Swarms System Circuit" width="100%">
   <br>
   <em>System Circuit Architecture — <a href="docs/system-circuit.html">View interactive standalone widget</a></em>
 </p>
@@ -155,7 +155,7 @@ node bin/index.js swarm-test -k rsa
 
 ## Make.com AI Agents Integration (Blueprints)
 
-Ready-to-use, anonymized **Make.com Blueprints** are provided in [`make-blueprints/`](make-blueprints/) and [`Make Templates/`](Make%20Templates/):
+Ready-to-use, anonymized **Make.com Blueprints** are provided in [`make-blueprints/`](make-blueprints/):
 
 *   **`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`**: Full Make.com blueprint orchestrating angle discovery, Gemini multimodal asset generation, and 5-Agent Swarm evaluation.
 *   **`SWA Agent Swarms for Predictive Asset Testing (5-Agent Swarm).blueprint.json`**: Anonymized template pre-configured for instant import with zero customer data or tokens.
