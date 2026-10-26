@@ -1,286 +1,218 @@
-<!-- ==============================================================
-     SWA DISTINCT SYSTEM SCHALTPLAN — Agent Swarms Predictive Testing (SQUARE 1:1 CIRCUIT - NO LOGO)
-     Optimiert für 1/2 Seite im 2er-Grid · Vertikale Top-to-Bottom Architektur
-     ============================================================== -->
-<style>
-  /* ============================================================
-     STRICT SCOPED NAMESPACE: Verhindert Leaking auf andere Charts!
-     Gilt NUR für dieses spezifische Widget (.swa-agent-swarms-square-circuit)
-     ============================================================ */
-  .swa-agent-swarms-square-circuit,
-  .elementor-widget-container .swa-agent-swarms-square-circuit,
-  .elementor-widget .swa-agent-swarms-square-circuit,
-  div.swa-agent-swarms-square-circuit {
-    --bg: #050505;
-    --border: #14161c;
-    --ink: #ffffff;
-    --ink-dim: #7f8694;
-    
-    background: #050505 !important;
-    border: 1px solid #14161c !important;
-    border-radius: 12px !important;
-    padding: 20px !important;
-    position: relative !important;
-    overflow: hidden !important;
-    width: 100% !important;
-    max-width: 560px !important; /* Isoliert auf dieses Widget */
-    margin: 0 auto !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.85) !important;
-    font-family: inherit !important;
-  }
-
-  @media (min-width: 520px) {
-    .swa-agent-swarms-square-circuit {
-      aspect-ratio: 1 / 1 !important;
-      min-height: 540px !important;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent Swarms - Predictive Asset Testing - System Architecture Circuit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0C10;
+      --card-bg: #FFFFFF;
+      --border: #E5E7EB;
+      --text-main: #F3F4F6;
+      --text-muted: #9CA3AF;
     }
-  }
-
-  .swa-agent-swarms-square-circuit * {
-    box-sizing: border-box !important;
-  }
-  
-  .swa-agent-swarms-square-circuit::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
-    background-size: 24px 24px;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .swa-agent-swarms-square-circuit .swa-circuit-wrapper {
-    width: 100% !important;
-    position: relative !important;
-    z-index: 2 !important;
-  }
-  
-  .swa-agent-swarms-square-circuit .swa-circuit-svg {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-  }
-
-  .swa-agent-swarms-square-circuit .dbt-node {
-    stroke: #14161c;
-    stroke-width: 1.2;
-    fill: #08090d;
-    rx: 0;
-    ry: 0;
-    transition: stroke 0.3s, fill 0.3s;
-  }
-
-  .swa-agent-swarms-square-circuit .node-group:hover .dbt-node {
-    stroke: #60a5fa;
-    fill: #0d0f14;
-  }
-
-  .swa-agent-swarms-square-circuit .dbt-node-icon {
-    fill: #11131a;
-    rx: 0;
-    ry: 0;
-  }
-</style>
-
-<div class="swa-agent-swarms-square-circuit">
-  <div class="swa-circuit-wrapper">
-    
-    <!-- Symmetrisches quadratisches 1:1 Canvas (500x500) -->
-    <svg class="swa-circuit-svg" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-      
-      <defs>
-        <!-- Grüne Pfeilspitze (Feeder & Execution) -->
-        <marker id="swa-marker-swarms-sq-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#3cea27" />
-        </marker>
-        <!-- Blaue Pfeilspitze (Core Forecaster Transition) -->
-        <marker id="swa-marker-swarms-sq-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#60a5fa" />
-        </marker>
-        <!-- Violette Pfeilspitze (Swarm Convergence) -->
-        <marker id="swa-marker-swarms-sq-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#7c62ff" />
-        </marker>
-      </defs>
-
-      <!-- ==================== SIGNAL LEITUNGEN (VERBINDUNGEN) ==================== -->
-      
-      <!-- 1. Von Ad Copy Baseline nach rechts zu Creative Pre-Production -->
-      <path d="M 225 48 L 275 48" stroke="#3cea27" stroke-width="2" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-
-      <!-- 2. Von Creative Pre-Production fächerförmig nach unten in die 5 Swarm Personas (#3cea27) -->
-      <!-- In Reihe 2A: SWARM-01, SWARM-02, SWARM-03 -->
-      <path d="M 320 72 C 320 94, 100 90, 100 114" stroke="#3cea27" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-      <path d="M 370 72 C 370 94, 250 90, 250 114" stroke="#3cea27" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-      <path d="M 420 72 C 420 94, 400 90, 400 114" stroke="#3cea27" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-
-      <!-- In Reihe 2B: Feeder-Leitungen in SWARM-04 und SWARM-05 -->
-      <path d="M 100 158 C 100 168, 172 165, 172 176" stroke="#3cea27" stroke-width="1.4" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-      <path d="M 400 158 C 400 168, 328 165, 328 176" stroke="#3cea27" stroke-width="1.4" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-
-      <!-- 3. Konvergenz aus allen 5 Swarm Personas in den Performance Forecaster (Violett #7c62ff) -->
-      <!-- Aus Reihe 2A äußere Bögen -->
-      <path d="M 55 158 C 55 240, 170 230, 170 264" stroke="#7c62ff" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-purple)" />
-      <path d="M 445 158 C 445 240, 330 230, 330 264" stroke="#7c62ff" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-purple)" />
-      <!-- Aus Reihe 2A Zentrum -->
-      <path d="M 250 158 L 250 264" stroke="#7c62ff" stroke-width="1.8" fill="none" marker-end="url(#swa-marker-swarms-sq-purple)" />
-      <!-- Aus Reihe 2B -->
-      <path d="M 172 220 C 172 244, 210 244, 210 264" stroke="#7c62ff" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-purple)" />
-      <path d="M 328 220 C 328 244, 290 244, 290 264" stroke="#7c62ff" stroke-width="1.6" fill="none" marker-end="url(#swa-marker-swarms-sq-purple)" />
-
-      <!-- 4. Vom Performance Forecaster senkrecht in den Winner Asset Mutator (Blau #60a5fa) -->
-      <path d="M 250 312 L 250 356" stroke="#60a5fa" stroke-width="2.5" fill="none" marker-end="url(#swa-marker-swarms-sq-blue)" />
-
-      <!-- 5. Vom Winner Asset Mutator fächerförmig nach unten in die Output Targets (Grün #3cea27) -->
-      <path d="M 195 404 C 195 424, 117 424, 117 440" stroke="#3cea27" stroke-width="1.8" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-      <path d="M 250 404 L 250 440" stroke="#3cea27" stroke-width="2" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-      <path d="M 305 404 C 305 424, 383 424, 383 440" stroke="#3cea27" stroke-width="1.8" fill="none" marker-end="url(#swa-marker-swarms-sq-green)" />
-
-
-      <!-- ==================== TIER 1: QUELLEN & PRE-PRODUCTION (OBEN) ==================== -->
-      
-      <!-- Node 1: Ad Copy Baseline -->
-      <g class="node-group">
-        <rect class="dbt-node" x="35" y="24" width="190" height="48" />
-        <rect class="dbt-node-icon" x="43" y="33" width="30" height="30" />
-        <g transform="translate(58, 48)"><text fill="#8e96a3" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" y="3">SRC</text></g>
-        <text x="81" y="46" fill="#ffffff" font-size="8.5" font-family="monospace">Ad Copy Baseline</text>
-        <text x="81" y="58" fill="#8e96a3" font-size="6.5" font-family="monospace">Raw Input Assets</text>
-      </g>
-      
-      <!-- Node 2: Creative Pre-Production -->
-      <g class="node-group">
-        <rect class="dbt-node" x="275" y="24" width="190" height="48" />
-        <rect class="dbt-node-icon" x="283" y="33" width="30" height="30" />
-        <g transform="translate(298, 48)"><text fill="#8e96a3" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" y="3">MDL</text></g>
-        <text x="321" y="46" fill="#ffffff" font-size="8.5" font-family="monospace">Creative Pre-Prod</text>
-        <text x="321" y="58" fill="#8e96a3" font-size="6.5" font-family="monospace">Variant Generator</text>
-        <rect x="402" y="18" width="55" height="12" rx="0" ry="0" fill="#7c62ff" />
-        <text x="429" y="26" fill="#ffffff" font-size="6.5" font-family="monospace" font-weight="bold" text-anchor="middle">GENERATE</text>
-      </g>
-
-
-      <!-- ==================== TIER 2: 5 AGENT SWARM PERSONAS (MITTE) ==================== -->
-      
-      <!-- Reihe 2A (3 Personas) -->
-
-      <!-- Node 3: SWARM-01 Persona -->
-      <g class="node-group">
-        <rect class="dbt-node" x="32" y="114" width="136" height="44" />
-        <rect class="dbt-node-icon" x="38" y="122" width="26" height="26" />
-        <g transform="translate(51, 135)"><text fill="#8e96a3" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">MDL</text></g>
-        <text x="69" y="134" fill="#ffffff" font-size="7.5" font-family="monospace">SWARM-01</text>
-        <text x="69" y="145" fill="#8e96a3" font-size="6.5" font-family="monospace">Persona Agent</text>
-        <rect x="115" y="108" width="46" height="11" rx="0" ry="0" fill="#7c62ff" />
-        <text x="138" y="116" fill="#ffffff" font-size="6" font-family="monospace" font-weight="bold" text-anchor="middle">TECH</text>
-      </g>
-
-      <!-- Node 4: SWARM-02 Persona -->
-      <g class="node-group">
-        <rect class="dbt-node" x="182" y="114" width="136" height="44" />
-        <rect class="dbt-node-icon" x="188" y="122" width="26" height="26" />
-        <g transform="translate(201, 135)"><text fill="#8e96a3" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">MDL</text></g>
-        <text x="219" y="134" fill="#ffffff" font-size="7.5" font-family="monospace">SWARM-02</text>
-        <text x="219" y="145" fill="#8e96a3" font-size="6.5" font-family="monospace">Persona Agent</text>
-        <rect x="260" y="108" width="50" height="11" rx="0" ry="0" fill="#60a5fa" />
-        <text x="285" y="116" fill="#ffffff" font-size="6" font-family="monospace" font-weight="bold" text-anchor="middle">FINANCE</text>
-      </g>
-
-      <!-- Node 5: SWARM-03 Persona -->
-      <g class="node-group">
-        <rect class="dbt-node" x="332" y="114" width="136" height="44" />
-        <rect class="dbt-node-icon" x="338" y="122" width="26" height="26" />
-        <g transform="translate(351, 135)"><text fill="#8e96a3" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">MDL</text></g>
-        <text x="369" y="134" fill="#ffffff" font-size="7.5" font-family="monospace">SWARM-03</text>
-        <text x="369" y="145" fill="#8e96a3" font-size="6.5" font-family="monospace">Persona Agent</text>
-        <rect x="410" y="108" width="50" height="11" rx="0" ry="0" fill="#f59e0b" />
-        <text x="435" y="116" fill="#ffffff" font-size="6" font-family="monospace" font-weight="bold" text-anchor="middle">SKEPTIC</text>
-      </g>
-
-      <!-- Reihe 2B (2 Personas zentriert) -->
-
-      <!-- Node 6: SWARM-04 Persona -->
-      <g class="node-group">
-        <rect class="dbt-node" x="102" y="176" width="140" height="44" />
-        <rect class="dbt-node-icon" x="108" y="184" width="26" height="26" />
-        <g transform="translate(121, 197)"><text fill="#8e96a3" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">MDL</text></g>
-        <text x="139" y="196" fill="#ffffff" font-size="7.5" font-family="monospace">SWARM-04</text>
-        <text x="139" y="207" fill="#8e96a3" font-size="6.5" font-family="monospace">Persona Agent</text>
-        <rect x="187" y="170" width="46" height="11" rx="0" ry="0" fill="#3cea27" />
-        <text x="210" y="178" fill="#ffffff" font-size="6" font-family="monospace" font-weight="bold" text-anchor="middle">RETAIL</text>
-      </g>
-
-      <!-- Node 7: SWARM-05 Persona -->
-      <g class="node-group">
-        <rect class="dbt-node" x="258" y="176" width="140" height="44" />
-        <rect class="dbt-node-icon" x="264" y="184" width="26" height="26" />
-        <g transform="translate(277, 197)"><text fill="#8e96a3" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">MDL</text></g>
-        <text x="295" y="196" fill="#ffffff" font-size="7.5" font-family="monospace">SWARM-05</text>
-        <text x="295" y="207" fill="#8e96a3" font-size="6.5" font-family="monospace">Persona Agent</text>
-        <rect x="335" y="170" width="55" height="11" rx="0" ry="0" fill="#e55255" />
-        <text x="362" y="178" fill="#ffffff" font-size="5.5" font-family="monospace" font-weight="bold" text-anchor="middle">ENTREPRENEUR</text>
-      </g>
-
-
-      <!-- ==================== TIER 3: PERFORMANCE FORECASTER (MITTE-UNTEN) ==================== -->
-      
-      <!-- Node 8: Performance Forecaster -->
-      <g class="node-group">
-        <rect class="dbt-node" x="135" y="264" width="230" height="48" />
-        <rect class="dbt-node-icon" x="143" y="273" width="30" height="30" />
-        <g transform="translate(158, 288)"><text fill="#8e96a3" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" y="3">MDL</text></g>
-        <text x="181" y="286" fill="#ffffff" font-size="8.5" font-family="monospace">Performance Forecaster</text>
-        <text x="181" y="299" fill="#8e96a3" font-size="6.5" font-family="monospace">Predictive Consensus Engine</text>
-        <rect x="296" y="258" width="58" height="12" rx="0" ry="0" fill="#60a5fa" />
-        <text x="325" y="266" fill="#ffffff" font-size="6.5" font-family="monospace" font-weight="bold" text-anchor="middle">FORECAST</text>
-      </g>
-
-
-      <!-- ==================== TIER 4: WINNER ASSET MUTATOR (UNTEN) ==================== -->
-      
-      <!-- Node 9: Winner Asset Mutator -->
-      <g class="node-group">
-        <rect class="dbt-node" x="135" y="356" width="230" height="48" />
-        <rect class="dbt-node-icon" x="143" y="365" width="30" height="30" />
-        <g transform="translate(158, 380)"><text fill="#8e96a3" font-size="8" font-family="monospace" font-weight="bold" text-anchor="middle" y="3">TBL</text></g>
-        <text x="181" y="378" fill="#ffffff" font-size="8.5" font-family="monospace">Winner Asset Mutator</text>
-        <text x="181" y="391" fill="#8e96a3" font-size="6.5" font-family="monospace">Final Top-Scoring Creative</text>
-        <rect x="296" y="350" width="58" height="12" rx="0" ry="0" fill="#3cea27" />
-        <text x="325" y="358" fill="#000000" font-size="6.5" font-family="monospace" font-weight="bold" text-anchor="middle">API PUSH</text>
-      </g>
-
-
-      <!-- ==================== TIER 5: OUTPUT ENDPOINTS / DEPLOYMENT (FUSS) ==================== -->
-      
-      <!-- Output 1: Google Ads API -->
-      <g class="node-group">
-        <rect class="dbt-node" x="45" y="440" width="125" height="36" />
-        <rect class="dbt-node-icon" x="51" y="446" width="24" height="24" />
-        <g transform="translate(63, 458)"><text fill="#3cea27" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">API</text></g>
-        <text x="81" y="455" fill="#ffffff" font-size="7.5" font-family="monospace">Google Ads API</text>
-        <text x="81" y="466" fill="#8e96a3" font-size="6.5" font-family="monospace">RSA Headlines</text>
-      </g>
-
-      <!-- Output 2: PMax Pool -->
-      <g class="node-group">
-        <rect class="dbt-node" x="187" y="440" width="126" height="36" />
-        <rect class="dbt-node-icon" x="193" y="446" width="24" height="24" />
-        <g transform="translate(205, 458)"><text fill="#60a5fa" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">PMX</text></g>
-        <text x="223" y="455" fill="#ffffff" font-size="7.5" font-family="monospace">PMax Asset Pool</text>
-        <text x="223" y="466" fill="#8e96a3" font-size="6.5" font-family="monospace">Active Rotation</text>
-      </g>
-
-      <!-- Output 3: Live Verification -->
-      <g class="node-group">
-        <rect class="dbt-node" x="330" y="440" width="125" height="36" />
-        <rect class="dbt-node-icon" x="336" y="446" width="24" height="24" />
-        <g transform="translate(348, 458)"><text fill="#7c62ff" font-size="7" font-family="monospace" font-weight="bold" text-anchor="middle" y="2">RT</text></g>
-        <text x="366" y="455" fill="#ffffff" font-size="7.5" font-family="monospace">Live Deployment</text>
-        <text x="366" y="466" fill="#8e96a3" font-size="6.5" font-family="monospace">Conversion Track</text>
-      </g>
-
-    </svg>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+      max-width: 860px;
+      width: 100%;
+    }
+    .header h1 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .circuit-wrapper {
+      width: 100%;
+      max-width: 860px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      overflow-x: auto;
+    }
+    .circuit-wrapper svg {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Agent Swarms - Predictive Asset Testing</h1>
+    <p>2D Architecture Circuit: 5 Persona Swarm Evaluation & Predictive Pre-Scoring</p>
   </div>
-</div>
+  <div class="circuit-wrapper">
+    <svg class="swa-circuit-svg" viewBox="0 0 740 330" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+    <style>
+      .dbt-node { fill: #FFFFFF; stroke: #E5E7EB; stroke-width: 1.2; transition: all 0.2s ease; }
+      .node-group:hover .dbt-node { stroke: #2563EB; fill: #F9FAFB; }
+      .dbt-node-icon { fill: #F3F4F6; }
+      text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Roboto Condensed", sans-serif; }
+    </style>
+      <marker id="c2-arrow-green" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#159A35" />
+      </marker>
+      <marker id="c2-arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M 0 1.5 L 10 5 L 0 8.5 z" fill="#7C3AED" />
+      </marker>
+    </defs>
+  <!-- Card Background -->
+  <rect width="740" height="330" rx="10" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1.2" />
+
+    <!-- Column 1 to Column 2 -->
+    <path d="M 120 130 L 120 170" stroke="#159A35" stroke-width="1.8" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 45, 280 45" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 105, 280 105" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 165, 280 165" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 225, 280 225" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+    <path d="M 210 195 C 250 195, 240 285, 280 285" stroke="#159A35" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-green)" />
+
+    <!-- Column 2 to Column 3 -->
+    <path d="M 460 45 C 500 45, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 105 L 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 165 C 500 165, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 225 C 500 225, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+    <path d="M 460 285 C 500 285, 490 105, 530 105" stroke="#7C3AED" stroke-width="1.5" fill="none" marker-end="url(#c2-arrow-purple)" />
+
+    <path d="M 620 130 L 620 170" stroke="#7C3AED" stroke-width="1.8" fill="none" marker-end="url(#c2-arrow-purple)" />
+
+    <!-- Node 1: Ad Copy Baseline -->
+    <g class="node-group">
+      <rect class="dbt-node" x="30" y="80" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="38" y="88" width="34" height="34" rx="4" />
+      <image href="data:image/png;base64,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" xlink:href="data:image/png;base64,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" x="43" y="83" width="24" height="24" preserveAspectRatio="xMidYMid meet" />
+      <text x="80" y="101" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Bestandsanzeige</text>
+      <text x="80" y="115" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Google Ads Import</text>
+      <rect x="155" y="74" width="45" height="12" rx="3" fill="#159A35" />
+      <text x="177" y="82.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">INPUT</text>
+    </g>
+
+    <!-- Node 2: Creative Pre-Production -->
+    <g class="node-group">
+      <rect class="dbt-node" x="30" y="170" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="38" y="178" width="34" height="34" rx="4" />
+      <g transform="translate(43, 184) scale(0.17)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="80" y="191" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Composer</text>
+      <text x="80" y="205" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">40 KI-Varianten erstellen</text>
+      <rect x="145" y="164" width="58" height="12" rx="3" fill="#7C3AED" />
+      <text x="174" y="172.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">COMPOSER</text>
+    </g>
+
+    <!-- COLUMN 2: 5 Swarm Personas -->
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="20" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="26" width="30" height="34" rx="4" />
+      <g transform="translate(291, 32) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="39" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">SWARM-01 · Tech Persona</text>
+      <text x="326" y="52" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prüft technische USPs &amp; Fakten</text>
+      <rect x="412" y="15" width="42" height="11" rx="2" fill="#7C3AED" />
+      <text x="433" y="23" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">TECH</text>
+    </g>
+
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="80" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="86" width="30" height="34" rx="4" />
+      <g transform="translate(291, 92) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="99" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">SWARM-02 · Finance Investor</text>
+      <text x="326" y="112" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prüft ROI, Zahlen &amp; Mehrwert</text>
+      <rect x="408" y="75" width="46" height="11" rx="2" fill="#2563EB" />
+      <text x="431" y="83" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">FINANCE</text>
+    </g>
+
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="140" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="146" width="30" height="34" rx="4" />
+      <g transform="translate(291, 152) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="159" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">SWARM-03 · Skeptic Auditor</text>
+      <text x="326" y="172" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prüft Einwände &amp; Belege</text>
+      <rect x="408" y="135" width="46" height="11" rx="2" fill="#F59E0B" />
+      <text x="431" y="143" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">SKEPTIC</text>
+    </g>
+
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="200" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="206" width="30" height="34" rx="4" />
+      <g transform="translate(291, 212) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="219" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">SWARM-04 · Retail Customer</text>
+      <text x="326" y="232" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prüft Nutzen &amp; Einfachheit</text>
+      <rect x="412" y="195" width="42" height="11" rx="2" fill="#159A35" />
+      <text x="433" y="203" fill="#FFFFFF" font-size="6" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">RETAIL</text>
+    </g>
+
+    <g class="node-group">
+      <rect class="dbt-node" x="280" y="260" width="180" height="46" rx="6" />
+      <rect class="dbt-node-icon" x="288" y="266" width="30" height="34" rx="4" />
+      <g transform="translate(291, 272) scale(0.15)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="326" y="279" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">SWARM-05 · Entrepreneur</text>
+      <text x="326" y="292" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prüft Solution Frame &amp; Hook</text>
+      <rect x="398" y="255" width="56" height="11" rx="2" fill="#EF4444" />
+      <text x="426" y="263" fill="#FFFFFF" font-size="5.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">ENTREPRENEUR</text>
+    </g>
+
+    <!-- COLUMN 3: Forecaster & Final Mutator -->
+    <g class="node-group">
+      <rect class="dbt-node" x="530" y="80" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="538" y="88" width="34" height="34" rx="4" />
+      <g transform="translate(543, 94) scale(0.17)">
+  <rect x="60" y="0" width="10" height="10" fill="#ccce44" /><rect x="70" y="0" width="10" height="10" fill="#f8b839" /><rect x="50" y="10" width="10" height="10" fill="#8ac767" /><rect x="60" y="10" width="10" height="10" fill="#ccce44" /><rect x="70" y="10" width="10" height="10" fill="#f8b839" /><rect x="80" y="10" width="10" height="10" fill="#f18a3a" /><rect x="40" y="20" width="10" height="10" fill="#65ba8b" /><rect x="50" y="20" width="10" height="10" fill="#8ac767" /><rect x="60" y="20" width="10" height="10" fill="#ccce44" /><rect x="70" y="20" width="10" height="10" fill="#f8b839" /><rect x="80" y="20" width="10" height="10" fill="#f18a3a" /><rect x="90" y="20" width="10" height="10" fill="#e55255" /><rect x="40" y="30" width="10" height="10" fill="#65ba8b" /><rect x="50" y="30" width="10" height="10" fill="#8ac767" /><rect x="80" y="30" width="10" height="10" fill="#f18a3a" /><rect x="90" y="30" width="10" height="10" fill="#e55255" /><rect x="30" y="40" width="10" height="10" fill="#5097cf" /><rect x="40" y="40" width="10" height="10" fill="#65ba8b" /><rect x="90" y="40" width="10" height="10" fill="#e55255" /><rect x="100" y="40" width="10" height="10" fill="#b554b5" /><rect x="30" y="50" width="10" height="10" fill="#5097cf" /><rect x="40" y="50" width="10" height="10" fill="#65ba8b" /><rect x="90" y="50" width="10" height="10" fill="#e55255" /><rect x="100" y="50" width="10" height="10" fill="#b554b5" /><rect x="30" y="60" width="10" height="10" fill="#5097cf" /><rect x="40" y="60" width="10" height="10" fill="#65ba8b" /><rect x="90" y="60" width="10" height="10" fill="#e55255" /><rect x="100" y="60" width="10" height="10" fill="#b554b5" /><rect x="20" y="70" width="10" height="10" fill="#4ca5df" /><rect x="30" y="70" width="10" height="10" fill="#5097cf" /><rect x="100" y="70" width="10" height="10" fill="#b554b5" /><rect x="110" y="70" width="10" height="10" fill="#726de9" /><rect x="20" y="80" width="10" height="10" fill="#4ca5df" /><rect x="30" y="80" width="10" height="10" fill="#5097cf" /><rect x="100" y="80" width="10" height="10" fill="#b554b5" /><rect x="110" y="80" width="10" height="10" fill="#726de9" /><rect x="20" y="90" width="10" height="10" fill="#4ca5df" /><rect x="30" y="90" width="10" height="10" fill="#5097cf" /><rect x="100" y="90" width="10" height="10" fill="#b554b5" /><rect x="110" y="90" width="10" height="10" fill="#726de9" /><rect x="10" y="100" width="10" height="10" fill="#48ade8" /><rect x="20" y="100" width="10" height="10" fill="#4ca5df" /><rect x="110" y="100" width="10" height="10" fill="#726de9" /><rect x="120" y="100" width="10" height="10" fill="#4c86f7" /><rect x="0" y="110" width="10" height="10" fill="#5bbdf7" /><rect x="10" y="110" width="10" height="10" fill="#48ade8" /><rect x="120" y="110" width="10" height="10" fill="#4c86f7" /><rect x="130" y="110" width="10" height="10" fill="#3d97ff" />
+</g>
+      <text x="580" y="101" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Performance Forecast</text>
+      <text x="580" y="115" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Prognose der Lead-Kosten</text>
+      <rect x="646" y="74" width="56" height="12" rx="3" fill="#2563EB" />
+      <text x="674" y="82.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">FORECAST</text>
+    </g>
+
+    <g class="node-group">
+      <rect class="dbt-node" x="530" y="170" width="180" height="50" rx="6" />
+      <rect class="dbt-node-icon" x="538" y="178" width="34" height="34" rx="4" />
+      <image href="data:image/png;base64,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" xlink:href="data:image/png;base64,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" x="543" y="173" width="24" height="24" preserveAspectRatio="xMidYMid meet" />
+      <text x="580" y="191" fill="#0F1115" font-size="8.5" font-family="'Roboto Condensed', sans-serif" font-weight="700">Google Ads Upload</text>
+      <text x="580" y="205" fill="#6B7280" font-size="7" font-family="'Roboto Condensed', sans-serif">Upload pausiert via API</text>
+      <rect x="648" y="164" width="54" height="12" rx="3" fill="#159A35" />
+      <text x="675" y="172.5" fill="#FFFFFF" font-size="6.5" font-family="'Roboto Condensed', sans-serif" font-weight="700" text-anchor="middle">UPLOAD</text>
+    </g>
+  </svg>
+  </div>
+</body>
+</html>
