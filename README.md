@@ -135,34 +135,34 @@ npm test
 
 ## CLI Usage & Commands
 
-### 1. Google Ads OAuth Setup
-Configure your Gemini API key and OAuth2 credentials to connect directly to your Google Ads Account:
+### 1. Configuration Setup
+Configure your optional Gemini API key (for live multi-agent chat) and default campaign themes:
 ```bash
-agent-swarms-predictive-asset-testing setup
+predictive-ads setup
 ```
 
 ### CLI & Agent Command Reference
 
-Die Ausführung erfolgt innerhalb der Google Antigravity CLI (`agy`) über folgende Befehle:
+Execution runs inside the Google Antigravity CLI (`agy`) via the clean CLI commands:
 
-| Befehl | Beschreibung |
+| Command | Description |
 | :--- | :--- |
-| `node bin/index.js preproduce`<br>*(Alias: `run`)* | Generiert bis zu 400 kardinale KI-Ad-Alternativen, führt die 6-D-Vektorisierung und 5-Achsen-Entscheidungsmatrix durch (Grades A–D), simuliert die 20 Persona-Agenten und berechnet die 30-Tage Holt-Winters ETS Prognose. |
-| `node bin/index.js swarm-test` | Führt das 20-Agenten Persona Swarm Testing isoliert auf bestehende oder neu generierte Ad-Creatives aus und gibt Akzeptanzquoten sowie CTR/CPC/CPM/CPL-Prognosen aus. |
-| `node bin/index.js agent list` | Listet alle registrierten persistenten Agenten (`PreproductionAgent`, Swarm Persona Archetypen) mit Rollen und Beschreibungen auf. |
-| `node bin/index.js setup` | Interaktive Konfiguration des Gemini API Keys sowie der Standard-Kampagnenthemen und Zielseiten-URLs. |
+| `predictive-ads preproduce`<br>*(Alias: `run`)* | Generates up to 400 cardinal AI ad alternatives, applies 6-D vectorization and the 5-axis Decision Matrix (Grades A–D), simulates the 20 Persona Agents, and calculates the 30-day Holt-Winters ETS forecast. |
+| `predictive-ads swarm-test` | Runs the 20-Agent Persona Swarm Testing in isolation on ad creatives and returns approval rates alongside CTR, CPC, CPM, and CPL benchmark projections. |
+| `predictive-ads agent list` | Lists all registered persistent agents (`PreproductionAgent`, Swarm Persona archetypes) with their roles and prompt descriptions. |
+| `predictive-ads setup` | Interactive configuration of the Gemini API key, default campaign focus topics, and landing page URLs. |
 
-#### Anwendungsbeispiele:
+#### Usage Examples:
 
 ```bash
-# 1. 400 RSA-Alternativen mit Persona Swarm und Landing-Page-Kontext generieren:
-node bin/index.js preproduce -t "Immobilienbewertung Berlin" -k rsa -c 400 -u "https://www.slavawagner.de"
+# 1. Generate 400 RSA alternatives with Persona Swarm evaluation and landing page context:
+predictive-ads preproduce -t "Real Estate Valuation Berlin" -k rsa -c 400 -u "https://www.slavawagner.de"
 
-# 2. Performance Max Asset Groups mit bestehenden Headlines testen:
-node bin/index.js preproduce -t "High-Ticket Lead Gen" -k pmax -c 200 -h "Exklusive Off-Market Deals" "Immobilien diskret verkaufen"
+# 2. Test Performance Max Asset Groups against baseline headlines:
+predictive-ads preproduce -t "High-Ticket Lead Gen" -k pmax -c 200 -h "Exclusive Off-Market Opportunities" "Discreet Property Valuation"
 
-# 3. Reine 20-Agenten Schwarm-Simulation starten:
-node bin/index.js swarm-test -k rsa
+# 3. Launch isolated 20-Agent Swarm Simulation:
+predictive-ads swarm-test -k rsa
 ```
 
 ---
@@ -217,11 +217,11 @@ Swarm Language:         ENGLISH (Dynamic Personas)
 
 ## Make.com AI Agents Integration (Blueprints)
 
-Zusätzlich zur CLI-Ausführung steht im Unterordner [`make-blueprints/`](make-blueprints/) ein fertiger Make.com Blueprint zur Verfügung, mit dem du die autonome Massen-Vorproduktion und das Predictive Asset Testing komplett über **Make.com mit Gemini AI Agents** ausführen kannst:
+In addition to CLI execution, a complete Make.com scenario blueprint is provided in the [`make-blueprints/`](make-blueprints/) folder, allowing you to run autonomous mass pre-production and predictive asset testing directly via **Make.com with Gemini AI Agents**:
 
-*   **[`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`](make-blueprints/SWA%20Agent%20Swarms%20for%20Predictive%20Asset%20Testing%20%28Asset%20Creation%29.blueprint.json)**: Vollständiges Make-Szenario zur Angle-Discovery, multimodalen Text-Asset-Erzeugung und 5-Agent Persona Swarm Simulation (inkl. CTR-, CPC-, CPM- und CPL-Prognosen).
+*   **[`SWA Agent Swarms for Predictive Asset Testing (Asset Creation).blueprint.json`](make-blueprints/SWA%20Agent%20Swarms%20for%20Predictive%20Asset%20Testing%20%28Asset%20Creation%29.blueprint.json)**: Complete Make.com scenario for angle discovery, multimodal text asset synthesis, and 5-agent persona swarm simulation (including CTR, CPC, CPM, and CPL benchmark projections).
 
-Eine ausführliche Schritt-für-Schritt-Anleitung für den Import und die Konfiguration findest du im [Make Blueprints Guide](make-blueprints/README.md).
+For step-by-step instructions on importing and configuring the scenario, see the [Make Blueprints Guide](make-blueprints/README.md).
 
 ---
 

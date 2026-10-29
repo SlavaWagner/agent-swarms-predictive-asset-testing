@@ -5,11 +5,15 @@
   "main": "bin/index.js",
   "type": "module",
   "bin": {
+    "predictive-ads": "./bin/index.js",
     "agent-swarms-predictive-asset-testing": "./bin/index.js",
     "predictive-asset-testing": "./bin/index.js"
   },
   "scripts": {
     "start": "node bin/index.js",
+    "preproduce": "node bin/index.js preproduce",
+    "swarm-test": "node bin/index.js swarm-test",
+    "setup": "node bin/index.js setup",
     "test": "node src/verify.js"
   },
   "dependencies": {

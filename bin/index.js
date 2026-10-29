@@ -75,30 +75,33 @@ function showAgyPrerequisiteWarning(attemptedCmd) {
   
   console.log(getAsciiLogo());
   console.log(yellowBox('================================================================================'));
-  console.log(yellowBox('⚠️   VORBEDINGUNG ERFORDERLICH: GOOGLE ANTIGRAVITY CLI ("agy")'));
+  console.log(yellowBox('⚠️   PREREQUISITE REQUIRED: GOOGLE ANTIGRAVITY CLI ("agy")'));
   console.log(yellowBox('================================================================================'));
   console.log();
-  console.log(whiteBold('  Agent Swarms for Predictive Asset Testing funktioniert ausschließlich'));
-  console.log(whiteBold('  INNERHALB der Antigravity CLI!'));
+  console.log(whiteBold('  Agent Swarms for Predictive Asset Testing works exclusively'));
+  console.log(whiteBold('  INSIDE the Google Antigravity CLI environment!'));
   console.log();
-  console.log(chalk.yellow('  Starte bitte vorher Antigravity mit dem Befehl "agy" und anschließend'));
-  console.log(chalk.yellow('  kannst du mit den Befehlen von agent-swarms-predictive-asset-testing'));
-  console.log(chalk.yellow('  chatten und die Predictive-Swarm-Testing-Prozesse bedienen.'));
+  console.log(chalk.yellow('  Please start Antigravity first using the command "agy".'));
+  console.log(chalk.yellow('  After launching agy, you can execute predictive-ads commands,'));
+  console.log(chalk.yellow('  chat with dynamic persona swarms, and control testing workflows.'));
   console.log();
-  console.log(chalk.gray('  Hinweis: Auf dieser normalen Terminal-Ebene findet keine KI-Verarbeitung statt.'));
-  console.log(chalk.gray('  Die Wiedergabe statischer Outputs wurde übersprungen.'));
+  console.log(chalk.gray('  Note: On standard terminal shells, AI model reasoning is not enabled.'));
+  console.log(chalk.gray('  Static output generation was skipped.'));
   console.log();
-  console.log(cyanText('  👉 SCHRITT 1:'));
-  console.log(whiteBold('     Öffne deine Konsole und starte Antigravity mit folgendem Befehl:'));
+  console.log(cyanText('  👉 STEP 1:'));
+  console.log(whiteBold('     Open your terminal and launch Antigravity with the following command:'));
   console.log();
   console.log('        ' + greenText('agy'));
   console.log();
-  console.log(cyanText('  👉 SCHRITT 2:'));
-  console.log(whiteBold('     In Antigravity kannst du interaktiv mit den Predictive Asset Swarm Agenten'));
-  console.log(whiteBold('     chatten und sämtliche Pre-Production- und Testing-Workflows steuern.'));
+  console.log(cyanText('  👉 STEP 2:'));
+  console.log(whiteBold('     Inside Antigravity, control all workflows using the clean CLI commands:'));
+  console.log();
+  console.log('        ' + greenText('predictive-ads preproduce'));
+  console.log('        ' + greenText('predictive-ads swarm-test'));
+  console.log('        ' + greenText('predictive-ads agent list'));
   console.log();
   console.log(yellowBox('================================================================================'));
-  console.log(chalk.gray('  (Entwickler-Override:   Befehl mit "--force" oder "--inside-agy" ausführen)'));
+  console.log(chalk.gray('  (Developer Override: execute command with "--force" or "--inside-agy")'));
   console.log();
 }
 
@@ -113,7 +116,7 @@ if (!isRunningInsideAntigravity()) {
 const program = new Command();
 
 program
-  .name('agent-swarms-predictive-asset-testing')
+  .name('predictive-ads')
   .description('Standalone AI Agent Swarms for Predictive Asset Testing & Pre-production (requires Antigravity CLI)')
   .version('1.0.0');
 
@@ -216,10 +219,10 @@ program
       });
 
       console.log(chalk.bold.green('\n=== AI ASSET DECISION MATRIX SCORING SUMMARY ==='));
-      console.log(`Grade A (PMF-Kandidaten / Skalieren):   ${chalk.bold.green(report.gradeCounts.A)}`);
-      console.log(`Grade B (Testwürdig / Mehr Varianten):  ${chalk.bold.cyan(report.gradeCounts.B)}`);
-      console.log(`Grade C (Grenzwertig / Low-Budget):     ${chalk.yellow(report.gradeCounts.C)}`);
-      console.log(`Grade D (Noise / Kill):                ${chalk.red(report.gradeCounts.D)}`);
+      console.log(`Grade A (PMF Candidates / Scale Up):    ${chalk.bold.green(report.gradeCounts.A)}`);
+      console.log(`Grade B (Test-Worthy / More Variants):  ${chalk.bold.cyan(report.gradeCounts.B)}`);
+      console.log(`Grade C (Marginal / Low Budget):        ${chalk.yellow(report.gradeCounts.C)}`);
+      console.log(`Grade D (Noise / Kill):                 ${chalk.red(report.gradeCounts.D)}`);
       console.log(`Top Candidate Ad ID:                    ${report.decisionMatrixSummary.topScoringAdId} (Score: ${report.decisionMatrixSummary.highestScore}/10)`);
 
       if (report.etsForecast) {
@@ -250,7 +253,7 @@ program
           console.log(chalk.bold.green(`[WINNER] TOP AD ALTERNATIVE TO LAUNCH: ${winner.candidateId}`));
           console.log(`   Matrix Grade & Score: Grade ${winner.matrixGrade} (${winner.matrixScore}/10)`);
           console.log(`   Swarm Approval Rate:  ${winner.swarmSummary.approvalRatePercent}% (${winner.swarmSummary.approvedAgentsCount}/20 Agents Approved)`);
-          console.log(chalk.cyan(`   Proportionale Metriken-Prognose (Hochrechnung):`));
+          console.log(chalk.cyan(`   Proportional Metrics Projection (Benchmark Estimation):`));
           console.log(`     - Ø CTR:  ${winner.swarmSummary.projectedMetrics.ctrPercent}%`);
           console.log(`     - Ø CPC:  €${winner.swarmSummary.projectedMetrics.cpcEuro}`);
           console.log(`     - Ø CPM:  €${winner.swarmSummary.projectedMetrics.cpmEuro}`);
