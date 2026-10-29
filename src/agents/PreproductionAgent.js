@@ -36,14 +36,14 @@ export default class PreproductionAgent extends BaseAgent {
 
   /**
    * Generates up to 400 AI Ad Alternatives with radical variance, story spines, and metaphors,
-   * scores them via DecisionMatrix, and runs Predictive Asset Testing via 20-Agent Swarm.
+   * scores them via DecisionMatrix, and runs Predictive Asset Testing via 5-Agent Persona Swarm.
    * 
    * @param {object} options
    * @param {string} options.targetAd - Existing ad object or context (Bestandsanzeige)
    * @param {string} options.finalUrl - Target landing page URL
    * @param {string} options.track - 'RSA' or 'PMax' (default 'RSA')
    * @param {number} options.count - Total alternatives to generate (default 400)
-   * @param {boolean} options.runSwarmTest - Whether to run 20-Agent Swarm testing on top variants (default true)
+   * @param {boolean} options.runSwarmTest - Whether to run 5-Agent Persona Swarm testing on top variants (default true)
    * @returns {Promise<object>} Complete mass production, scoring, and swarm testing report
    */
   async preproduceAdAlternatives(options = {}) {
@@ -198,8 +198,8 @@ export default class PreproductionAgent extends BaseAgent {
     // Step 4: Run Agent Swarm Predictive Asset Testing if enabled
     let swarmReport = null;
     if (runSwarmTest) {
-      this.log(`\n[LAUNCH] Starting 20-Agent Swarm for Predictive Asset Testing...`);
-      // Step 3: Run 20-Agent Swarm Testing on Top 40 Candidates
+      this.log(`\n[LAUNCH] Starting 5-Agent Persona Swarm for Predictive Asset Testing...`);
+      // Step 3: Run 5-Agent Persona Swarm Testing on Top 40 Candidates
       const topCandidates = [...gradeA, ...gradeB].slice(0, 40);
       swarmReport = await this.agentSwarm.runPredictiveTesting(topCandidates, track, options.theme || 'Immobilien & High-Price Lead Gen', {
         theme: options.theme,
